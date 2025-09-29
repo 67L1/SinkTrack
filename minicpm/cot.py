@@ -59,7 +59,7 @@ def get_qwen3_response(model, tokenizer, prompt_text):
 
 
 model_path = "/home/resource/model/MiniCPM3-4B"
-VAL_DATA_PATH = "/home/yhzhang/xu_liu2/zerotoken/llama31/quac/val_v0.2.json"
+VAL_DATA_PATH = "llama31/quac/val_v0.2.json"
 OUTPUT_PATH = "cot.jsonl"
 injection_layer_idx = 5
 
@@ -146,3 +146,4 @@ if __name__ == "__main__":
 
 
     print("-" * 20)
+
