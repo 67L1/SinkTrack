@@ -18,15 +18,6 @@ from dataclasses import dataclass
 from PIL import Image
 from tqdm import tqdm
 from sinktrack import Gemma3ForConditionalGenerationWithInjection
-parser = argparse.ArgumentParser()
-parser.add_argument('--config', default='config/config.yaml', help='global environment configs')
-args = parser.parse_args()
-yaml = YAML()
-
-# Reading a YAML file
-with open(args.config, 'r') as file:
-    config = yaml.load(file)
-    print(config)
 
 IMG_FOLDER = '/qwen2/MMStar/'
 EVAL_FILE = 'qwen2/MMStar/test.json'
@@ -174,3 +165,4 @@ def main():
 if __name__ == '__main__':
 
     main()
+
