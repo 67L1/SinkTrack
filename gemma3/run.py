@@ -19,7 +19,7 @@ from PIL import Image
 from tqdm import tqdm
 from sinktrack import Gemma3ForConditionalGenerationWithInjection
 parser = argparse.ArgumentParser()
-parser.add_argument('--config', default='/home/yhzhang/xu_liu2/Interleaved/ICoT/config/config.yaml', help='global environment configs')
+parser.add_argument('--config', default='config/config.yaml', help='global environment configs')
 args = parser.parse_args()
 yaml = YAML()
 
@@ -28,17 +28,9 @@ with open(args.config, 'r') as file:
     config = yaml.load(file)
     print(config)
 
-# IMG_FOLDER = '/home/yhzhang/xu_liu2/zerotoken/qwen2/realworldqa/data/'
-# EVAL_FILE = '/home/yhzhang/xu_liu2/zerotoken/qwen2/realworldqa/data/test.json'
-# DATA_NAME = 'realworldqa'
-
-IMG_FOLDER = '/home/yhzhang/xu_liu2/zerotoken/qwen2/MMStar/'
-EVAL_FILE = '/home/yhzhang/xu_liu2/zerotoken/qwen2/MMStar/test.json'
+IMG_FOLDER = '/qwen2/MMStar/'
+EVAL_FILE = 'qwen2/MMStar/test.json'
 DATA_NAME = 'mmstar'
-
-# IMG_FOLDER = '/home/yhzhang/xu_liu2/zerotoken/qwen2/POPE/data/'
-# EVAL_FILE = '/home/yhzhang/xu_liu2/zerotoken/qwen2/POPE/data/test.json'
-# DATA_NAME = 'POPE'
 
 path = "/home/resource/model/gemma-3-4b-it"
 # default: Load the model on the available device(s)
@@ -180,4 +172,5 @@ def main():
 
 
 if __name__ == '__main__':
+
     main()
