@@ -144,13 +144,9 @@ def eval_fn(val_results, model_results, verbose):
       did = par['id']
       qa_list = par['qas']
 
-      # --- 核心修改点 ---
-      # 为 DHEQ 初始化 good_dial 标志
       good_dial = 1.
-      # 标记是否至少有一个问题被评估，以正确计算 total_dials
       dialogue_evaluated = False
 
-      # 恢复循环，但只遍历前两个问题
       for qa in qa_list[:1]:
         dialogue_evaluated = True
         q_idx = qa['id']
@@ -201,9 +197,6 @@ def eval_fn(val_results, model_results, verbose):
 
         # dont eval on low agreement instances
         if hf1 < args.min_f1:
-          # 如果跳过，这个问题不计入 HEQ, F1 等，但 DHEQ 仍然受影响
-          # 为了简化，我们假设 low-agreement 问题不影响 DHEQ 评估
-          # 如果需要更复杂的逻辑（例如，low-agreement 问题自动使 DHEQ 失败），可以在这里设置 good_dial = 0
           continue
 
         human_f1.append(hf1)
@@ -223,20 +216,16 @@ def eval_fn(val_results, model_results, verbose):
         if max_f1 >= hf1:
           HEQ += 1.
         else:
-          # 只要有一个问题不达标，整个对话的 DHEQ 就失败
           good_dial = 0.
 
         span_overlap_stats[max_overlap] += 1
         f1_stats[max_overlap].append(max_f1)
         total_qs += 1.
 
-      # 在处理完一个对话的前两个问题后，累加 DHEQ 和 total_dials
       if dialogue_evaluated:
         DHEQ += good_dial
         total_dials += 1
 
-  # --- 结果计算和打印部分 ---
-  # 添加安全检查以避免除零错误
   DHEQ_score = 100.0 * DHEQ / total_dials if total_dials > 0 else 0
   HEQ_score = 100.0 * HEQ / total_qs if total_qs > 0 else 0
   all_f1s = sum(f1_stats.values(), [])
@@ -300,3 +289,4 @@ if __name__ == "__main__":
     with open(args.o, 'w') as fout:
       json.dump(metric_json, fout)
   print(f"total: {total}")
+
