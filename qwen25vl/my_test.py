@@ -21,16 +21,6 @@ from tqdm import tqdm
 from sinktrack import Qwen2_5_VLForConditionalGenerationWithInjection
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--config', default='config/config.yaml', help='global environment configs')
-args = parser.parse_args()
-yaml = YAML()
-
-# Reading a YAML file
-with open(args.config, 'r') as file:
-    config = yaml.load(file)
-    print(config)
-
 IMG_FOLDER = 'POPE/data/'
 EVAL_FILE = 'POPE/data/test.json'
 DATA_NAME = 'POPE'
@@ -186,3 +176,4 @@ def main():
 if __name__ == '__main__':
 
     main()
+
