@@ -496,7 +496,7 @@ class Qwen2_5_VLModelWithInjection(Qwen2_5_VLModel):
 class Qwen2_5_VLForConditionalGenerationWithInjection(Qwen2_5_VLForConditionalGeneration):
     def __init__(self, config):
         super().__init__(config)
-        self.model = Qwen2_5_VLModelWithInjection(config)  # 重新初始化model以确保结构正确
+        self.model = Qwen2_5_VLModelWithInjection(config)
 
     def forward(
             self,
@@ -569,5 +569,6 @@ class Qwen2_5_VLForConditionalGenerationWithInjection(Qwen2_5_VLForConditionalGe
         injection_layer_idx = kwargs.pop("injection_layer_idx", None)
         model_inputs = super().prepare_inputs_for_generation(*args, **kwargs)
         model_inputs["injection_layer_idx"] = injection_layer_idx
+
 
         return model_inputs
