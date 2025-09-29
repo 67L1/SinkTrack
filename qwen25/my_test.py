@@ -37,7 +37,7 @@ def load_model_and_tokenizer(model_id: str, device: str = "auto"):
 
 
 model_path = "/home/resource/model/Qwen2.5-7B-Instruct"
-VAL_DATA_PATH = "/home/yhzhang/xu_liu2/zerotoken/llama31/quac/val_v0.2.json"
+VAL_DATA_PATH = "llama31/quac/val_v0.2.json"
 OUTPUT_PATH = "my_model_predictions2.jsonl"
 injection_layer_idx = 5
 
@@ -150,3 +150,4 @@ if __name__ == "__main__":
 
 
     print("-" * 20)
+
