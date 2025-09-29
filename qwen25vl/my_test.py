@@ -22,7 +22,7 @@ from sinktrack import Qwen2_5_VLForConditionalGenerationWithInjection
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--config', default='/home/yhzhang/xu_liu2/Interleaved/ICoT/config/config.yaml', help='global environment configs')
+parser.add_argument('--config', default='config/config.yaml', help='global environment configs')
 args = parser.parse_args()
 yaml = YAML()
 
@@ -31,22 +31,8 @@ with open(args.config, 'r') as file:
     config = yaml.load(file)
     print(config)
 
-
-
-# IMG_FOLDER = '/home/yhzhang/xu_liu2/zerotoken/qwen2/realworldqa/data/'
-# EVAL_FILE = '/home/yhzhang/xu_liu2/zerotoken/qwen2/realworldqa/data/test.json'
-# DATA_NAME = 'realworldqa'
-
-# IMG_FOLDER = '/home/yhzhang/xu_liu2/zerotoken/qwen2/MMStar/'
-# EVAL_FILE = '/home/yhzhang/xu_liu2/zerotoken/qwen2/MMStar/test.json'
-# DATA_NAME = 'mmstar'
-
-# IMG_FOLDER = '/home/yhzhang/xu_liu2/zerotoken/qwen2/MathVision/'
-# EVAL_FILE = '/home/yhzhang/xu_liu2/zerotoken/qwen2/MathVision/data/math_vision.json'
-# DATA_NAME = 'MathVision'
-
-IMG_FOLDER = '/home/yhzhang/xu_liu2/zerotoken/qwen2/POPE/data/'
-EVAL_FILE = '/home/yhzhang/xu_liu2/zerotoken/qwen2/POPE/data/test.json'
+IMG_FOLDER = 'POPE/data/'
+EVAL_FILE = 'POPE/data/test.json'
 DATA_NAME = 'POPE'
 
 INJECTION_ALPHA = 0.8
@@ -198,4 +184,5 @@ def main():
 
 
 if __name__ == '__main__':
+
     main()
