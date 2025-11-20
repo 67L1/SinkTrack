@@ -32,7 +32,7 @@ model = Gemma3ForConditionalGenerationWithInjection.from_pretrained(
 # default processer
 processor = AutoProcessor.from_pretrained(path)
 
-injection_layer_idx = 5
+injection_layer_idx = 4
 
 dataset = open(EVAL_FILE).readlines()
 dataset = [json.loads(d) for d in dataset]
@@ -144,10 +144,18 @@ def main():
 
             zero_shot_vision = [os.path.join(IMG_FOLDER, data['image'])]
 
-            if DATA_NAME != 'POPE':
-                zero_shot_mcot_input_str = mcot_input_str+ '\n' + cot_prompt + '\n' + final_output_format
+            global injection_layer_idx
+
+            if DATA_NAME == 'POPE':
+                zero_shot_mcot_input_str = mcot_input_str + '\n' + output_format_pope
+                injection_layer_idx = 6
+            elif DATA_NAME == 'RealWorldQA':
+                zero_shot_mcot_input_str = mcot_input_str + '\n' + final_output_format
+                injection_layer_idx = 6
             else:
-                zero_shot_mcot_input_str = mcot_input_str+ '\n' + cot_prompt + '\n' + output_format_pope
+                zero_shot_mcot_input_str = mcot_input_str+ '\n' + cot_prompt + '\n' + final_output_format
+                injection_layer_idx = 4
+
             zero_shot = get_res(zero_shot_mcot_input_str, zero_shot_vision, one_shot=False)
             zeroshot_mcot_output = copy.deepcopy(data)
             zeroshot_mcot_output['pred'] = zero_shot
@@ -165,4 +173,5 @@ def main():
 if __name__ == '__main__':
 
     main()
+
 
