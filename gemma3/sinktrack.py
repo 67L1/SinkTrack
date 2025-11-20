@@ -293,7 +293,8 @@ class Gemma3TextModelWithInjection(Gemma3TextModel):
             )
             hidden_states = layer_outputs[0]
             if global_image_embedding is not None and (idx) % injection_layer_idx == 0 and idx != 0:
-                global_image_embedding = hidden_states[:, st_ed_idx[0]:st_ed_idx[1] + 1, :]
+                global_image_embedding = torch.mean(hidden_states, dim=1)
+                # global_image_embedding = hidden_states[:, st_ed_idx[0]:st_ed_idx[1] + 1, :]
 
             if output_attentions:
                 all_self_attns += (layer_outputs[1],)
@@ -386,7 +387,8 @@ class Gemma3ModelWithInjection(Gemma3Model):
             image_features = image_features.to(inputs_embeds.device, inputs_embeds.dtype)
             inputs_embeds = inputs_embeds.masked_scatter(special_image_mask, image_features)
 
-            global_image_embedding = image_features
+            global_image_embedding = torch.mean(image_features, dim=1)
+            # global_image_embedding = image_features
             if injection_layer_idx is not None:
                 print(f"Preparing global image embedding for injection.")
                 image_mask = (input_ids == self.config.image_token_id)
@@ -544,5 +546,6 @@ class Gemma3ForConditionalGenerationWithInjection(Gemma3ForConditionalGeneration
         injection_layer_idx = kwargs.pop("injection_layer_idx", None)
         model_inputs = super().prepare_inputs_for_generation(*args, **kwargs)
         model_inputs["injection_layer_idx"] = injection_layer_idx
+
 
         return model_inputs
