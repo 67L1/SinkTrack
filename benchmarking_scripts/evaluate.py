@@ -103,8 +103,7 @@ def compare_pred_answer(pred_text: str, ans_text: str) -> bool:
 
 from collections import defaultdict
 def calculate_f1_macro(y_true, y_pred):
-    labels = sorted(list(set(y_true) | set(y_pred)))
-
+    labels = sorted(set(y_true))
     stats = defaultdict(lambda: {"tp": 0, "fp": 0, "fn": 0})
 
     for true, pred in zip(y_true, y_pred):
@@ -223,4 +222,5 @@ def main(input_file):
 
 if __name__ == "__main__":
     file = f"./sinktrack/qwen7b/mmstar/res_323.json"
+
     main(file)
