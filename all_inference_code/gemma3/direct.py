@@ -29,10 +29,10 @@ with open(args.config, 'r') as file:
     print(config)
 
 ########### THE CODE YOU CAN MODIFY  ################
-path = 'model/gemma-3-4b-it' # model's path
+path = 'models/gemma-3-4b-it' # model's path
 
-IMG_FOLDER = '' # image folder with .png
-EVAL_FILE = '' # test.json
+IMG_FOLDER = 'datasets/realworldqa' # image folder with .png
+EVAL_FILE = 'datasets/realworldqa' # test.json
 DATA_NAME = 'realworldqa'
 
 # IMG_FOLDER = '' # image folder with .png

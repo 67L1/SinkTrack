@@ -32,14 +32,14 @@ with open(args.config, 'r') as file:
     print(config)
 
 ########### THE CODE YOU CAN MODIFY  ################
-path = '/file02/user/liuxu/models/gemma-3-4b-it' # model's path
+path = 'models/gemma-3-4b-it' # model's path
 
 # IMG_FOLDER = '' # image folder with .png
 # EVAL_FILE = '' # test.json
 # DATA_NAME = 'realworldqa'
 
-IMG_FOLDER = '/file02/user/liuxu/zerotoken/qwen2/MMStar/' # image folder with .png
-EVAL_FILE = '/file02/user/liuxu/zerotoken/qwen2/MMStar/test.json' # test.json
+IMG_FOLDER = 'datasets/MMStar/' # image folder with .png
+EVAL_FILE = 'datasets/MMStar/test.json' # test.json
 DATA_NAME = 'mmstar'
 
 # IMG_FOLDER = '' # image folder with .png

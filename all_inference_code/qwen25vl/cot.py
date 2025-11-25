@@ -15,9 +15,9 @@ fix_seeds(SEED)
 
 path = 'models/Qwen2.5-VL-7B-Instruct' # model's path
 
-IMG_FOLDER = '' # image folder with .png
-EVAL_FILE = '' # test.json
-DATA_NAME = 'realworldqa'
+# IMG_FOLDER = '' # image folder with .png
+# EVAL_FILE = '' # test.json
+# DATA_NAME = 'realworldqa'
 
 # IMG_FOLDER = '' # image folder with .png
 # EVAL_FILE = '' # test.json
@@ -27,9 +27,9 @@ DATA_NAME = 'realworldqa'
 # EVAL_FILE = '' # test.json
 # DATA_NAME = 'POPE'
 
-# IMG_FOLDER = '' # image folder with .png
-# EVAL_FILE = '' # test.json
-# DATA_NAME = 'm3cot'
+IMG_FOLDER = '' # image folder with .png
+EVAL_FILE = '' # test.json
+DATA_NAME = 'm3cot'
 
 ######################################################
 
