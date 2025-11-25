@@ -40,6 +40,7 @@ We provide a script to format the data.
 *   **Requirement:** The M3CoT dataset must contain the following keys: `id` (question id), `image` (image path), `question`, `choices`, and `answer`.
 *   **Action:** Run the processing script:
     ```bash
+    cd datasets
     python process_m3cot.py
     ```
 *   **Output:** This will generate:
