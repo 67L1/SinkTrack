@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from typing import Optional, Tuple, Union
 
+# 导入所有需要的原始gemma3类和函数
 from transformers.models.gemma3.modeling_gemma3 import (
     Gemma3Attention,
     Gemma3DecoderLayer,
@@ -33,6 +34,11 @@ logger = logging.get_logger(__name__)
 
 
 class Gemma3InjectionAttention(Gemma3Attention):
+    """
+    继承自 Gemma3Attention，增加了在指定层向第一个 token 注入全局图像信息的功能。
+    注入通过对第一个 token 使用 Cross-Attention 实现，而其他 token 保持 Self-Attention。
+    """
+
     def forward(
             self,
             hidden_states: torch.Tensor,
@@ -40,6 +46,7 @@ class Gemma3InjectionAttention(Gemma3Attention):
             attention_mask: Optional[torch.Tensor],
             past_key_value: Optional[Cache] = None,
             cache_position: Optional[torch.LongTensor] = None,
+            # 新增参数
             global_image_embedding: Optional[torch.Tensor] = None,
             injection_layer_idx: Optional[int] = None,
             **kwargs: Unpack[FlashAttentionKwargs],
@@ -47,6 +54,7 @@ class Gemma3InjectionAttention(Gemma3Attention):
 
         bsz, q_len, _ = hidden_states.shape
 
+        # 判断是否执行注入操作
         is_injection_step = (
                 injection_layer_idx is not None
                 and self.layer_idx % injection_layer_idx == 0
@@ -58,17 +66,28 @@ class Gemma3InjectionAttention(Gemma3Attention):
 
         if is_injection_step:
             print(f"Injecting global image info in layer {self.layer_idx}...")
+            # --- 注入逻辑 ---
+
             input_shape = hidden_states.shape[:-1]
             hidden_shape = (*input_shape, -1, self.head_dim)
+
+            # 1. 准备所有 Q, K, V
+            # Q from text
             query_states = self.q_proj(hidden_states)
+            # K, V from text (for self-attention part)
             key_states_text = self.k_proj(hidden_states)
             value_states_text = self.v_proj(hidden_states)
+
+            # K, V from global image embedding (for cross-attention part)
             if global_image_embedding.dim() == 2:
                 global_image_embedding = global_image_embedding.unsqueeze(1)  # Shape: (bsz, 1, hidden_size)
+
+            # K, V 投影层需要 (bsz, seq_len, hidden_size) 形状的输入
             img_bsz, img_len, img_hidden = global_image_embedding.shape
             key_states_image = self.k_proj(global_image_embedding)
             value_states_image = self.v_proj(global_image_embedding)
 
+            # 2. Reshape & Norm
             query_states = self.q_norm(query_states.view(hidden_shape).transpose(1, 2))
             key_states_text = self.k_norm(key_states_text.view(hidden_shape).transpose(1, 2))
             value_states_text = value_states_text.view(hidden_shape).transpose(1, 2)
@@ -76,19 +95,24 @@ class Gemma3InjectionAttention(Gemma3Attention):
             key_states_image = self.k_norm(key_states_image.view(bsz, img_len, -1, self.head_dim).transpose(1, 2))
             value_states_image = value_states_image.view(bsz, img_len, -1, self.head_dim).transpose(1, 2)
 
+            # 3. RoPE (仅应用于文本部分的 Q 和 K)
             cos, sin = position_embeddings
             query_states, key_states_text = apply_rotary_pos_emb(query_states, key_states_text, cos, sin)
 
+            # 4. KV 缓存更新 (使用文本自身的 K/V)
             if past_key_value is not None:
                 cache_kwargs = {"sin": sin, "cos": cos, "cache_position": cache_position}
                 key_states_text, value_states_text = past_key_value.update(key_states_text, value_states_text,
                                                                            self.layer_idx, cache_kwargs)
 
+            # 5. 分离计算
+            # 5.1 第一个 Token: Cross-Attention
             query_first = query_states[:, :, :1, :]  # (bsz, num_heads, 1, head_dim)
 
             key_image_repeated = repeat_kv(key_states_image, self.num_key_value_groups)
             value_image_repeated = repeat_kv(value_states_image, self.num_key_value_groups)
 
+            # 使用 PyTorch 内置的高效 SDPA
             attn_output_first = torch.nn.functional.scaled_dot_product_attention(
                 query_first,
                 key_image_repeated,
@@ -99,24 +123,30 @@ class Gemma3InjectionAttention(Gemma3Attention):
                 scale=self.scaling,
             )
 
+            # 5.2 其余 Tokens: Self-Attention
             query_others = query_states[:, :, 1:, :]  # (bsz, num_heads, q_len-1, head_dim)
             key_others = key_states_text
             value_others = value_states_text
 
+            # 调整 attention mask
+            # causal_mask has shape (bsz, 1, q_len, kv_len)
             causal_mask_others = attention_mask[:, :, 1:, :] if attention_mask is not None else None
 
+            # Gemma3的eager attention实现细节较多，这里为了清晰，我们同样用SDPA
+            # 注意：如果原始实现有更复杂的逻辑（如softcapping），这里需要相应适配
             attn_output_others = torch.nn.functional.scaled_dot_product_attention(
                 query_others,
                 repeat_kv(key_others, self.num_key_value_groups),
                 repeat_kv(value_others, self.num_key_value_groups),
                 attn_mask=causal_mask_others,
                 dropout_p=self.attention_dropout if self.training else 0.0,
-                is_causal=causal_mask_others is None and query_others.shape[2] > 1,
+                is_causal=causal_mask_others is None and query_others.shape[2] > 1,  # 仅在没有mask时才启用内置causal
                 scale=self.scaling,
             )
 
+            # 6. 合并结果
             attn_output = torch.cat([attn_output_first, attn_output_others], dim=2)
-            attn_weights = None
+            attn_weights = None  # SDPA不直接返回权重，设为None
             attn_output = attn_output.transpose(1, 2).contiguous()
             attn_output = attn_output.reshape(*input_shape, -1).contiguous()
             attn_output = self.o_proj(attn_output)
@@ -124,6 +154,10 @@ class Gemma3InjectionAttention(Gemma3Attention):
             return attn_output, attn_weights
 
         else:
+            # --- 标准自注意力逻辑 (直接调用父类) ---
+            # 从 kwargs 中移除我们自定义的参数，以防父类方法报错
+            # kwargs.pop("global_image_embedding", None)
+            # kwargs.pop("injection_layer_idx", None)
             return super().forward(
                 hidden_states=hidden_states,
                 position_embeddings=position_embeddings,
@@ -133,12 +167,14 @@ class Gemma3InjectionAttention(Gemma3Attention):
                 **kwargs,
             )
 
+        # Reshape and project
 
 
 
 class Gemma3InjectionDecoderLayer(Gemma3DecoderLayer):
     def __init__(self, config, layer_idx: int):
         super().__init__(config, layer_idx)
+        # 替换为我们自定义的 Attention 模块
         self.self_attn = Gemma3InjectionAttention(config, layer_idx)
 
     def forward(
@@ -152,6 +188,7 @@ class Gemma3InjectionDecoderLayer(Gemma3DecoderLayer):
             output_attentions: Optional[bool] = False,
             use_cache: Optional[bool] = False,
             cache_position: Optional[torch.LongTensor] = None,
+            # 新增参数
             global_image_embedding: Optional[torch.Tensor] = None,
             injection_layer_idx: Optional[int] = None,
             **kwargs,
@@ -164,6 +201,7 @@ class Gemma3InjectionDecoderLayer(Gemma3DecoderLayer):
         else:
             position_embeddings = position_embeddings_global
 
+        # 调用自定义的 Self Attention
         hidden_states, self_attn_weights = self.self_attn(
             hidden_states=hidden_states,
             position_embeddings=position_embeddings,
@@ -173,6 +211,7 @@ class Gemma3InjectionDecoderLayer(Gemma3DecoderLayer):
             output_attentions=output_attentions,
             use_cache=use_cache,
             cache_position=cache_position,
+            # 传递新参数
             global_image_embedding=global_image_embedding,
             injection_layer_idx=injection_layer_idx,
             **kwargs,
@@ -196,6 +235,7 @@ class Gemma3InjectionDecoderLayer(Gemma3DecoderLayer):
 class Gemma3TextModelWithInjection(Gemma3TextModel):
     def __init__(self, config):
         super().__init__(config)
+        # 替换为我们自定义的 Decoder Layer 列表
         self.layers = nn.ModuleList(
             [Gemma3InjectionDecoderLayer(config, layer_idx) for layer_idx in range(config.num_hidden_layers)]
         )
@@ -211,11 +251,13 @@ class Gemma3TextModelWithInjection(Gemma3TextModel):
             output_attentions: Optional[bool] = None,
             output_hidden_states: Optional[bool] = None,
             cache_position: Optional[torch.LongTensor] = None,
+            # 新增参数
             global_image_embedding: Optional[torch.Tensor] = None,
             injection_layer_idx: Optional[int] = None,
             st_ed_idx = None,
             **kwargs,
     ) -> Union[Tuple, Gemma3ModelOutputWithPast]:
+        # 此处省略了与原始Gemma3TextModel.forward中完全相同的输入检查和mask准备代码
         output_attentions = output_attentions if output_attentions is not None else self.config.output_attentions
         output_hidden_states = (
             output_hidden_states if output_hidden_states is not None else self.config.output_hidden_states
@@ -281,20 +323,24 @@ class Gemma3TextModelWithInjection(Gemma3TextModel):
                 hidden_states,
                 position_embeddings_global=position_embeddings_global,
                 position_embeddings_local=position_embeddings_local,
-                attention_mask=attention_mask[decoder_layer.attention_type],
+                attention_mask=attention_mask[decoder_layer.attention_type],  # 注意gemma3的mask是dict
                 position_ids=position_ids,
                 past_key_value=past_key_values,
                 output_attentions=output_attentions,
                 use_cache=use_cache,
                 cache_position=cache_position,
+                # 传递新参数
                 global_image_embedding=global_image_embedding,
                 injection_layer_idx=injection_layer_idx,
                 **kwargs,
             )
             hidden_states = layer_outputs[0]
             if global_image_embedding is not None and (idx) % injection_layer_idx == 0 and idx != 0:
-                global_image_embedding = torch.mean(hidden_states, dim=1)
-                # global_image_embedding = hidden_states[:, st_ed_idx[0]:st_ed_idx[1] + 1, :]
+                # global_image_embedding = hidden_states
+                # if idx <= 13:
+                #     global_image_embedding = global_image_embedding
+                # else:
+                global_image_embedding = hidden_states[:, st_ed_idx[0]:st_ed_idx[1] + 1, :]
 
             if output_attentions:
                 all_self_attns += (layer_outputs[1],)
@@ -315,6 +361,7 @@ class Gemma3TextModelWithInjection(Gemma3TextModel):
 class Gemma3ModelWithInjection(Gemma3Model):
     def __init__(self, config):
         super().__init__(config)
+        # 替换为我们自定义的 Text Model
         self.language_model = Gemma3TextModelWithInjection(config.text_config)
 
     def forward(
@@ -332,6 +379,7 @@ class Gemma3ModelWithInjection(Gemma3Model):
             output_attentions: Optional[bool] = None,
             output_hidden_states: Optional[bool] = None,
             return_dict: Optional[bool] = None,
+            # 新增参数
             injection_layer_idx: Optional[int] = None,
             **lm_kwargs,
     ) -> Union[tuple, Gemma3ModelOutputWithPast]:
@@ -387,19 +435,29 @@ class Gemma3ModelWithInjection(Gemma3Model):
             image_features = image_features.to(inputs_embeds.device, inputs_embeds.dtype)
             inputs_embeds = inputs_embeds.masked_scatter(special_image_mask, image_features)
 
-            global_image_embedding = torch.mean(image_features, dim=1)
-            # global_image_embedding = image_features
+            # 计算全局图像嵌入 (B, NumPatches, Hidden) -> (B, Hidden)
+            global_image_embedding = image_features
             if injection_layer_idx is not None:
                 print(f"Preparing global image embedding for injection.")
+                # 1. Create a boolean mask for the image tokens
                 image_mask = (input_ids == self.config.image_token_id)
+
+                # 2. Find the start indices
+                # Cast the boolean mask to an integer tensor and find the index of the first occurrence of 1.
                 start_indices = torch.argmax(image_mask.int(), dim=1)
+
+                # 3. Find the end indices
+                # Flip the mask along the sequence dimension
                 flipped_mask = torch.flip(image_mask, dims=[1])
+                # Find the index of the first 'True' in the flipped mask
                 end_indices_rev = torch.argmax(flipped_mask.int(), dim=1)
+                # Convert the end indices back to the original coordinate space
                 sequence_length = input_ids.shape[1]
                 end_indices = sequence_length - 1 - end_indices_rev
                 print("Start Indices:", start_indices)
                 print("End Indices:", end_indices)
 
+        # It may already have been prepared by e.g. `generate`
         if not isinstance(causal_mask_mapping := attention_mask, dict):
             # Prepare mask arguments
             mask_kwargs = {
@@ -429,6 +487,7 @@ class Gemma3ModelWithInjection(Gemma3Model):
                 "sliding_attention": create_sliding_window_causal_mask(**mask_kwargs),
             }
 
+        # 调用自定义的 language model，并传递新参数
         outputs = self.language_model(
             attention_mask=causal_mask_mapping,
             position_ids=position_ids,
@@ -457,6 +516,7 @@ class Gemma3ModelWithInjection(Gemma3Model):
 class Gemma3ForConditionalGenerationWithInjection(Gemma3ForConditionalGeneration):
     def __init__(self, config):
         super().__init__(config)
+        # 替换为我们自定义的 Model
         self.model = Gemma3ModelWithInjection(config)
 
     def forward(
@@ -475,6 +535,7 @@ class Gemma3ForConditionalGenerationWithInjection(Gemma3ForConditionalGeneration
             output_hidden_states: Optional[bool] = None,
             return_dict: Optional[bool] = None,
             logits_to_keep: Union[int, torch.Tensor] = 0,
+            # 新增参数
             injection_layer_idx: Optional[int] = None,
             **lm_kwargs,
     ) -> Union[tuple, Gemma3CausalLMOutputWithPast]:
@@ -498,6 +559,7 @@ class Gemma3ForConditionalGenerationWithInjection(Gemma3ForConditionalGeneration
             output_hidden_states=output_hidden_states,
             return_dict=return_dict,
             cache_position=cache_position,
+            # 传递新参数
             injection_layer_idx=injection_layer_idx,
             **lm_kwargs,
         )
@@ -543,9 +605,14 @@ class Gemma3ForConditionalGenerationWithInjection(Gemma3ForConditionalGeneration
         )
 
     def prepare_inputs_for_generation(self, *args, **kwargs):
+        """确保自定义参数在 generate 循环中被传递"""
+        # 弹出我们的自定义参数，以免父类方法报错
         injection_layer_idx = kwargs.pop("injection_layer_idx", None)
-        model_inputs = super().prepare_inputs_for_generation(*args, **kwargs)
-        model_inputs["injection_layer_idx"] = injection_layer_idx
 
+        # 调用父类方法获取标准输入
+        model_inputs = super().prepare_inputs_for_generation(*args, **kwargs)
+
+        # 将自定义参数加回去
+        model_inputs["injection_layer_idx"] = injection_layer_idx
 
         return model_inputs

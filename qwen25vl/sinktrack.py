@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 from typing import Optional, Tuple, Union, List, Any
 
+# 导入所有需要的原始类和函数
 from transformers.models.qwen2_5_vl.modeling_qwen2_5_vl import (
     Qwen2_5_VLAttention,
     Qwen2_5_VLDecoderLayer,
@@ -12,9 +13,9 @@ from transformers.models.qwen2_5_vl.modeling_qwen2_5_vl import (
     apply_multimodal_rotary_pos_emb,
     repeat_kv,
     eager_attention_forward,
-    Qwen2_5_VLModelOutputWithPast,
+    Qwen2_5_VLModelOutputWithPast,# 保留以备后用
 )
-from transformers.cache_utils import Cache
+from transformers.cache_utils import Cache,DynamicCache
 from transformers.processing_utils import Unpack
 from transformers.modeling_flash_attention_utils import FlashAttentionKwargs
 from transformers.utils import TransformersKwargs, auto_docstring, can_return_tuple, is_torchdynamo_compiling, logging
@@ -25,7 +26,6 @@ logger = logging.get_logger(__name__)
 
 
 class Qwen2_5_VLInjectionAttention(Qwen2_5_VLAttention):
-
     def forward(
             self,
             hidden_states: torch.Tensor,
@@ -69,6 +69,7 @@ class Qwen2_5_VLInjectionAttention(Qwen2_5_VLAttention):
 
             img_bsz, img_len, img_dim = global_image_embedding.shape
 
+            # 2. Reshape
             query_states = query_states.view(bsz, q_len, self.num_heads, self.head_dim).transpose(1, 2)
             key_states_text = key_states_text.view(bsz, q_len, self.num_key_value_heads, self.head_dim).transpose(1, 2)
             value_states_text = value_states_text.view(bsz, q_len, self.num_key_value_heads, self.head_dim).transpose(1,
@@ -81,10 +82,6 @@ class Qwen2_5_VLInjectionAttention(Qwen2_5_VLAttention):
             cos, sin = position_embeddings
             query_states, key_states_text = apply_multimodal_rotary_pos_emb(
                 query_states, key_states_text, cos, sin, self.rope_scaling["mrope_section"]
-            )
-
-            _, key_states_image = apply_multimodal_rotary_pos_emb(
-                query_states, key_states_image, cos, sin, self.rope_scaling["mrope_section"]
             )
 
             if past_key_value is not None:
@@ -141,6 +138,7 @@ class Qwen2_5_VLInjectionAttention(Qwen2_5_VLAttention):
                 **kwargs,
             )
 
+        # Reshape and project
         attn_output = attn_output.transpose(1, 2).contiguous()
         attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)
         attn_output = self.o_proj(attn_output)
@@ -221,7 +219,7 @@ class Qwen2_5_VLTextModelWithInjection(Qwen2_5_VLTextModel):
             injection_layer_idx: Optional[int] = None,
             st_ed_idx = None,
             **kwargs: Unpack[FlashAttentionKwargs],
-    ) -> Union[Tuple, Any]:
+    ) -> Union[Tuple, Any]:  # Any is BaseModelOutputWithPast
 
         output_attentions = output_attentions if output_attentions is not None else self.config.output_attentions
         output_hidden_states = (
@@ -354,6 +352,7 @@ class Qwen2_5_VLModelWithInjection(Qwen2_5_VLModel):
             rope_deltas: Optional[torch.LongTensor] = None,
             cache_position: Optional[torch.LongTensor] = None,
             second_per_grid_ts: Optional[torch.Tensor] = None,
+            # 新增参数
             injection_layer_idx: Optional[int] = None,
             **kwargs: Unpack[TransformersKwargs],
     ) -> Union[tuple, Qwen2_5_VLModelOutputWithPast]:
@@ -395,16 +394,26 @@ class Qwen2_5_VLModelWithInjection(Qwen2_5_VLModel):
 
             if injection_layer_idx is not None:
                 print(f"Preparing global image embedding for injection.")
+                # 1. Create a boolean mask for the image tokens
                 image_mask = (input_ids == self.config.image_token_id)
+
+                # 2. Find the start indices
+                # Cast the boolean mask to an integer tensor and find the index of the first occurrence of 1.
                 start_indices = torch.argmax(image_mask.int(), dim=1)
+
+                # 3. Find the end indices
+                # Flip the mask along the sequence dimension
                 flipped_mask = torch.flip(image_mask, dims=[1])
+                # Find the index of the first 'True' in the flipped mask
                 end_indices_rev = torch.argmax(flipped_mask.int(), dim=1)
+                # Convert the end indices back to the original coordinate space
                 sequence_length = input_ids.shape[1]
                 end_indices = sequence_length - 1 - end_indices_rev
                 print("Start Indices:", start_indices)
                 print("End Indices:", end_indices)
                 global_image_embeddings_list = []
                 single_image_embeds = image_embeds
+                # global_image_embeddings_list.append(torch.mean(single_image_embeds, dim=0))
                 global_image_embeddings_list.append(single_image_embeds)
 
                 if global_image_embeddings_list:
@@ -567,8 +576,9 @@ class Qwen2_5_VLForConditionalGenerationWithInjection(Qwen2_5_VLForConditionalGe
 
     def prepare_inputs_for_generation(self, *args, **kwargs):
         injection_layer_idx = kwargs.pop("injection_layer_idx", None)
-        model_inputs = super().prepare_inputs_for_generation(*args, **kwargs)
-        model_inputs["injection_layer_idx"] = injection_layer_idx
 
+        model_inputs = super().prepare_inputs_for_generation(*args, **kwargs)
+
+        model_inputs["injection_layer_idx"] = injection_layer_idx
 
         return model_inputs

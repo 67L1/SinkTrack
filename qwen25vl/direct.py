@@ -1,3 +1,40 @@
+import random
+import numpy as np
+import torch
+
+
+def fix_seeds(seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+
+
+########### THE CODE YOU CAN MODIFY  ################
+SEED = 323
+fix_seeds(SEED)
+
+path = 'models/Qwen2.5-VL-7B-Instruct' # model's path
+
+IMG_FOLDER = '' # image folder with .png
+EVAL_FILE = '' # test.json
+DATA_NAME = 'realworldqa'
+
+# IMG_FOLDER = '' # image folder with .png
+# EVAL_FILE = '' # test.json
+# DATA_NAME = 'mmstar'
+
+# IMG_FOLDER = '' # image folder with .png
+# EVAL_FILE = '' # test.json
+# DATA_NAME = 'POPE'
+
+# IMG_FOLDER = '' # image folder with .png
+# EVAL_FILE = '' # test.json
+# DATA_NAME = 'm3cot'
+
+######################################################
+
 from sympy.physics.units import temperature
 from transformers import Qwen2_5_VLForConditionalGeneration, AutoTokenizer, AutoProcessor
 from qwen_vl_utils import process_vision_info
@@ -7,7 +44,7 @@ from ruamel.yaml import YAML
 import json
 from tqdm import tqdm
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ['CUDA_VISIBLE_DEVICES'] = '6'
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 import torch
 import json
 import copy
@@ -19,7 +56,7 @@ from dataclasses import dataclass
 from PIL import Image
 from tqdm import tqdm
 parser = argparse.ArgumentParser()
-parser.add_argument('--config', default='config/config.yaml', help='global environment configs')
+parser.add_argument('--config', default='config.yaml', help='global environment configs')
 args = parser.parse_args()
 yaml = YAML()
 
@@ -28,20 +65,17 @@ with open(args.config, 'r') as file:
     config = yaml.load(file)
     print(config)
 
-IMG_FOLDER = 'POPE/data/'
-EVAL_FILE = 'POPE/data/test.json'
-DATA_NAME = 'POPE'
-
-path = "/home/resource/model/Qwen2.5-VL-3B-Instruct"
+# default: Load the model on the available device(s)
 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-    path, torch_dtype="auto", device_map="auto"
+    path, torch_dtype="auto", device_map="cuda:0"
 )
-
 processor = AutoProcessor.from_pretrained(path)
 
 
 dataset = open(EVAL_FILE).readlines()
 dataset = [json.loads(d) for d in dataset]
+if DATA_NAME == 'm3cot':
+    dataset = [x for x in dataset if x['image'] is not None]
 
 def get_res(prompt, image, one_shot):
     if one_shot:
@@ -91,7 +125,7 @@ def get_res(prompt, image, one_shot):
     inputs = inputs.to("cuda")
 
     # Inference: Generation of the output
-    generated_ids = model.generate(**inputs, max_new_tokens=64, temperature=2.0, do_sample=True)
+    generated_ids = model.generate(**inputs, max_new_tokens=64, temperature=1.2, do_sample=True)
     generated_ids_trimmed = [
         out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
     ]
@@ -99,10 +133,6 @@ def get_res(prompt, image, one_shot):
         generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
     )
     return output_text[0]
-
-
-cot_prompt = """Let's think step by step!"""
-
 
 
 zero_shot_prompt_template = '''Question: {}
@@ -132,39 +162,52 @@ def open_pkl(path):
 
 def main():
     if '3B' in path:
-        output_dir = './results/qwen3b/{}'.format(DATA_NAME)
+        output_dir = './direct/qwen3b/{}'.format(DATA_NAME)
     else:
-        output_dir = './results/qwen/{}'.format(DATA_NAME)
+        output_dir = './direct/qwen7b/{}'.format(DATA_NAME)
     os.makedirs(output_dir, exist_ok=True)
 
-    mcot_zero_fh = open(output_dir + '/res.json', 'a')
+    mcot_zero_fh = open(output_dir + f'/res_{SEED}.json', 'a')
 
     for idx, data in enumerate(tqdm(dataset)):
-        print("="*200)
-        final_output_format = ""
-        mcot_input_str = zero_shot_prompt_template.format(data['question'])
+        try:
+            print("="*200)
+            final_output_format = ""
+            OPTIONS = """Options:
+            """
+            mcot_input_str = zero_shot_prompt_template.format(data['question'])
+            if DATA_NAME == 'm3cot':
+                for i, c in zip(['A', 'B', 'C', 'D', 'E', 'F'], data['choices']):
+                    mcot_input_str += '{}. {}\n'.format(i, c)
 
-        if final_output_format == "":
-            final_output_format = output_format_options
-        if DATA_NAME == 'POPE':
-            final_output_format = output_format_wo_options
 
-        zero_shot_vision = [os.path.join(IMG_FOLDER, data['image'])]
-        zero_shot_mcot_input_str = mcot_input_str+ '\n' + final_output_format
-        zero_shot = get_res(zero_shot_mcot_input_str, zero_shot_vision, one_shot=False)
-        zeroshot_mcot_output = copy.deepcopy(data)
-        zeroshot_mcot_output['pred'] = zero_shot
+            if final_output_format == "":
+                final_output_format = output_format_options
+            if DATA_NAME == 'POPE':
+                final_output_format = output_format_wo_options
 
-        mcot_zero_fh.write(json.dumps(zeroshot_mcot_output) + '\n')
-        print(f"zeroshot_mcot_output:\n{zeroshot_mcot_output}\n")
 
-        del zero_shot, zero_shot_vision
+            zero_shot_vision = [os.path.join(IMG_FOLDER, data['image'])]
 
-        torch.cuda.empty_cache()
-        gc.collect()
-        
+            zero_shot_mcot_input_str = mcot_input_str+ '\n' + final_output_format
+
+            zero_shot = get_res(zero_shot_mcot_input_str, zero_shot_vision, one_shot=False)
+
+
+            zeroshot_mcot_output = copy.deepcopy(data)
+            zeroshot_mcot_output['pred'] = zero_shot
+
+            mcot_zero_fh.write(json.dumps(zeroshot_mcot_output) + '\n')
+            print(f"zeroshot_mcot_output:\n{zeroshot_mcot_output}\n")
+
+            del zero_shot, zero_shot_vision
+
+            torch.cuda.empty_cache()
+            gc.collect()
+        except Exception as e:
+            print(f"eeee:{e}")
+
 
 
 if __name__ == '__main__':
-
     main()
