@@ -13,22 +13,22 @@ def fix_seeds(seed):
 SEED = 323
 fix_seeds(SEED)
 
-path = 'models/Qwen2.5-VL-7B-Instruct' # model's path
+path = '../models/Qwen2.5-VL-7B-Instruct' # model's path
 
-# IMG_FOLDER = '' # image folder with .png
+# IMG_FOLDER = '' # include image folder
 # EVAL_FILE = '' # test.json
 # DATA_NAME = 'realworldqa'
 
-# IMG_FOLDER = '' # image folder with .png
+# IMG_FOLDER = '' # include image folder
 # EVAL_FILE = '' # test.json
 # DATA_NAME = 'mmstar'
 
-# IMG_FOLDER = '' # image folder with .png
+# IMG_FOLDER = '' # include image folder
 # EVAL_FILE = '' # test.json
 # DATA_NAME = 'POPE'
 
-IMG_FOLDER = '' # image folder with .png
-EVAL_FILE = '' # test.json
+IMG_FOLDER = '../datasets/M3CoT/' # include image folder
+EVAL_FILE = '../datasets/M3CoT/test.json' # test.json
 DATA_NAME = 'm3cot'
 
 ######################################################
@@ -73,10 +73,8 @@ model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
 processor = AutoProcessor.from_pretrained(path)
 
 
-dataset = open(EVAL_FILE).readlines()
-dataset = [json.loads(d) for d in dataset]
-if DATA_NAME == 'm3cot':
-    dataset = [x for x in dataset if x['image'] is not None]
+dataset = [json.loads(line) for line in open(EVAL_FILE, encoding='utf-8') if line.strip()]
+
 
 
 def get_res(prompt, image, one_shot):

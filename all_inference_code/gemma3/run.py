@@ -34,20 +34,20 @@ with open(args.config, 'r') as file:
 ########### THE CODE YOU CAN MODIFY  ################
 path = 'models/gemma-3-4b-it' # model's path
 
-# IMG_FOLDER = '' # image folder with .png
+# IMG_FOLDER = '' # include image folder
 # EVAL_FILE = '' # test.json
 # DATA_NAME = 'realworldqa'
 
-IMG_FOLDER = 'datasets/MMStar/' # image folder with .png
-EVAL_FILE = 'datasets/MMStar/test.json' # test.json
-DATA_NAME = 'mmstar'
-
-# IMG_FOLDER = '' # image folder with .png
+# IMG_FOLDER = '' # include image folder
 # EVAL_FILE = '' # test.json
-# DATA_NAME = 'POPE'
+# DATA_NAME = 'mmstar'
 
-# IMG_FOLDER = '' # image folder with .png
-# EVAL_FILE = '' # test.json
+IMG_FOLDER = '' # include image folder
+EVAL_FILE = '' # test.json
+DATA_NAME = 'POPE'
+
+# IMG_FOLDER = '../datasets/M3CoT/data/' # include image folder
+# EVAL_FILE = '../datasets/M3CoT/data/test.json' # test.json
 # DATA_NAME = 'm3cot'
 
 ######################################################
@@ -60,10 +60,8 @@ processor = AutoProcessor.from_pretrained(path)
 
 injection_layer_idx = 4
 
-dataset = open(EVAL_FILE).readlines()
-dataset = [json.loads(d) for d in dataset]
-if DATA_NAME == 'm3cot':
-    dataset = [x for x in dataset if x['image'] is not None]
+dataset = [json.loads(line) for line in open(EVAL_FILE, encoding='utf-8') if line.strip()]
+
 
 def get_res(prompt, image, one_shot):
     if one_shot:
