@@ -28,6 +28,8 @@ Follow these steps to set up the environment and install the required dependenci
 
 ## 1. Reproducing Results: Qwen2.5-VL on M3CoT
 
+**Note:** All operations in this section should be performed within the `all_inference_codes` directory unless otherwise specified.
+
 This section guides you through the complete pipeline for running Qwen2.5-VL on the M3CoT dataset, including data preparation, inference, and evaluation.
 
 ### Step 1: Download Dataset
@@ -38,7 +40,7 @@ Download the M3CoT dataset from HuggingFace:
 ### Step 2: Process Dataset
 We provide a script to format the data.
 *   **Requirement:** The M3CoT dataset must contain the following keys: `id` (question id), `image` (image path), `question`, `choices`, and `answer`.
-*   **Action:** Run the processing script:
+*   **Action:** Navigate to the datasets directory and run the processing script:
     ```bash
     cd datasets
     python process_m3cot.py
@@ -53,6 +55,8 @@ Download the **Qwen2.5-VL-7B-Instruct** model.
 *   **Destination:** Place the model files into the `all_inference_codes/models` directory.
 
 ### Step 4: Run Inference
+**Important:** Ensure you are back in the `all_inference_codes` directory before proceeding.
+
 Navigate to the Qwen2.5-VL directory and run the inference scripts for different methods (Direct, CoT, and SinkTrack).
 
 ```bash
