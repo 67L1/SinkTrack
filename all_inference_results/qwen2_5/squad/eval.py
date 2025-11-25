@@ -119,7 +119,7 @@ def calculate_my_acc(input_file_path):
 
 
 def main():
-    METHODS = ['direct', 'cot', '25_own_cot_sinktrack']
+    METHODS = ['direct', 'cot', 'sinktrack']
 
     SEEDS = [323, 500, 900]
 
