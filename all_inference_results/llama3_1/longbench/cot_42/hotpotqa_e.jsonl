@@ -1,0 +1,300 @@
+{"_id": "1dae9ec530a93f43f85bd215a5c0e6737dbcf226cd3541d8", "prediction": "Yanzhou District", "answers": ["Yanzhou"], "task": "hotpotqa_e", "length": 3745}
+{"_id": "b2af3aefc3bc4f5ba5340eca87389e8dcaa6fa1834110aaf", "prediction": "McLaren Vale", "answers": ["McLaren Vale"], "task": "hotpotqa_e", "length": 3669}
+{"_id": "8a8f9b9a86f187871fec7c7adf266d2f5e8a657933b690b1", "prediction": "Oberschleißheim", "answers": ["Oberschleißheim"], "task": "hotpotqa_e", "length": 2697}
+{"_id": "ebbd87b5c458cf749032bb57bb69ba30cd54ac841b39153d", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 734}
+{"_id": "688290dc04d1d27718acde2852886321869e2144c642a93e", "prediction": "Robert Z. Leonard was born on October 7, 1889, and Sinclair Hill was born on June 10, 1896.", "answers": ["Sinclair Hill"], "task": "hotpotqa_e", "length": 2329}
+{"_id": "b28a378bd6fd7d6f9edfad27b853b6e1dcfca0f26b07a557", "prediction": "Kew", "answers": ["Kew, Melbourne, Australia"], "task": "hotpotqa_e", "length": 2854}
+{"_id": "6f1878db4a5deb3dd168bf2275cd753e434311c0900ce549", "prediction": "Herbert Ross.", "answers": ["Herbert Ross"], "task": "hotpotqa_e", "length": 3791}
+{"_id": "bc41e6e732844618d6a0e90a089ddcb5803a7d5d2dcae923", "prediction": "Emilio Sánchez", "answers": ["Emilio Ángel Sánchez Vicario"], "task": "hotpotqa_e", "length": 2762}
+{"_id": "6ad3ed1320a952efd9df47137729d6f27f4fb720739dc5be", "prediction": "Oldham County.", "answers": ["Oldham County, Kentucky"], "task": "hotpotqa_e", "length": 3650}
+{"_id": "21b53766bfa36a6cf080a4624c2ff14559e75c253e514f95", "prediction": "Very little differences in elevation.", "answers": ["very little"], "task": "hotpotqa_e", "length": 3268}
+{"_id": "4bed97d5daa9f4078353a6cd57e7427f4a854bffa5c09234", "prediction": "globetrotters", "answers": ["the best known globetrotters"], "task": "hotpotqa_e", "length": 3711}
+{"_id": "bd73411dca43834c6d3f153f1eac9919a0fb3a8ae909ee67", "prediction": "The North Sea.", "answers": ["North Sea"], "task": "hotpotqa_e", "length": 2601}
+{"_id": "df9c97f6d1531f7868982667505b92012d0919604b6fe131", "prediction": "Lardizabalaceae", "answers": ["a genus of flowering plant in the Lardizabalaceae family"], "task": "hotpotqa_e", "length": 111}
+{"_id": "c5b67fae3f50b2c27eaa6248ea92ba04b917aca24810ab36", "prediction": "Gareth Evans", "answers": ["Gareth Huw Evans"], "task": "hotpotqa_e", "length": 3414}
+{"_id": "4238125ba7385b441a08dedeb5cf574bf64bfe06e8d578e6", "prediction": "European route E22.", "answers": ["European route E 22"], "task": "hotpotqa_e", "length": 2800}
+{"_id": "88a86128267b1d8a14f97c64a5b03ad6c0aa0cb6d02c4336", "prediction": "Eunuch", "answers": ["Mulberry"], "task": "hotpotqa_e", "length": 3293}
+{"_id": "88ecef6a544abe95c7d7b3130586c02359d2a3efa43fd1f5", "prediction": "Yes", "answers": ["no"], "task": "hotpotqa_e", "length": 3177}
+{"_id": "b0f42fe35532a3195281456d38184da20c1eba239afb0c9c", "prediction": "University of Missouri", "answers": ["University of Missouri"], "task": "hotpotqa_e", "length": 3419}
+{"_id": "b736f7476502aa44aa8a45aad32d21e1f30caf2af63ca2f5", "prediction": "There is no information about a radio station serving the area comprising all of Belknap County, among others, in the provided passages.", "answers": ["WANH"], "task": "hotpotqa_e", "length": 1907}
+{"_id": "52d590122036aad981cb7bfde8070e43dac3402b18ebe504", "prediction": "Orange County", "answers": ["Orange County"], "task": "hotpotqa_e", "length": 3577}
+{"_id": "b55bff6ef6f22a2c6dee6ff372eca9a460934b1b09868ee9", "prediction": "Crocosmia.", "answers": ["Crocosmia"], "task": "hotpotqa_e", "length": 3863}
+{"_id": "0f1a738be89f269824727205b57bbd6a919c1624dce1ef75", "prediction": "The Duke of Devonshire.", "answers": ["William Cavendish, 7th Duke of Devonshire"], "task": "hotpotqa_e", "length": 3769}
+{"_id": "c16d4b1878bbdb269cbee8cb555ce4ab1c3235feffd45569", "prediction": "Nalerigu", "answers": ["Gambaga"], "task": "hotpotqa_e", "length": 2389}
+{"_id": "5938b467f1d6ee64c2bed583d2b845f3bc1a3ea06f8d4a5a", "prediction": "My Boss, My Hero", "answers": ["My Boss, My Hero"], "task": "hotpotqa_e", "length": 3547}
+{"_id": "9ba6e5905bd2df894da4f773da7a85162463143e34f5f6d4", "prediction": "Dutch", "answers": ["the Netherlands"], "task": "hotpotqa_e", "length": 3287}
+{"_id": "69a7a204e296babb322d3fe7c7ee60e6b8f0f70e237abb80", "prediction": "Division of Cook", "answers": ["Division of Cook"], "task": "hotpotqa_e", "length": 3918}
+{"_id": "8dae4c4136fe8138095f740306ea35bb648d77c099927568", "prediction": "The Snowman.", "answers": ["The Snowman"], "task": "hotpotqa_e", "length": 3591}
+{"_id": "c200a2948150d50d1f8127771d41e7c225df30d520c4b946", "prediction": "Timanfaya National Park.", "answers": ["Timanfaya National Park"], "task": "hotpotqa_e", "length": 2598}
+{"_id": "6a19ad6f564ebfc50447ee4315ab9a246aeb472906728777", "prediction": "Binghamton", "answers": ["Albany Great Danes baseball team"], "task": "hotpotqa_e", "length": 3741}
+{"_id": "a5b6031f24f2af89a8ea917c39ba1652e5608649660bb138", "prediction": "The Karakoram mountain range.", "answers": ["Karakoram mountain range"], "task": "hotpotqa_e", "length": 2466}
+{"_id": "4f578bedb58906daa59e91baacc5d3c4b5d68d82e086891d", "prediction": "Unfortunately, there is no passage that provides information about actors who worked with German cinematographers.", "answers": ["George Clooney, Thekla Reuten, Violante Placido, Irina Björklund, and Paolo Bonacelli"], "task": "hotpotqa_e", "length": 3790}
+{"_id": "f349d7bdea5f38b858c69ddae4698a287f9d201869c14919", "prediction": "There is no information about a former nose tackle announcing ESPN College Football Friday Primetime in 2017.", "answers": ["Dusty Dvoracek"], "task": "hotpotqa_e", "length": 1541}
+{"_id": "74a0d1f482742706d6caa7317a2ffb16435c55f201103ba5", "prediction": "September 23, 1935", "answers": ["September 23, 1935"], "task": "hotpotqa_e", "length": 3090}
+{"_id": "61356d2aa30332d1822f56cd5b6df2c5dead62a4181e9a21", "prediction": "Professional wrestler and actor.", "answers": ["professional wrestler, actor, and hip hop musician"], "task": "hotpotqa_e", "length": 3406}
+{"_id": "8e6601795d9fc7f058d0ddda2a16f2529eadaada16a006d0", "prediction": "Amberley Village", "answers": ["Amberley Village"], "task": "hotpotqa_e", "length": 3704}
+{"_id": "d7b20f67e2075e1bd7631ad951da5c23469d19c1318b4541", "prediction": "Michael Graves", "answers": ["architect Michael Graves"], "task": "hotpotqa_e", "length": 3000}
+{"_id": "941e86896e755bc2d10bd939afcefbb32e3365365be43835", "prediction": "Tim Cluess", "answers": ["Tim Cluess"], "task": "hotpotqa_e", "length": 1761}
+{"_id": "d1b29add2ea05572b337d86f1acb96a13dda4dbf096647d7", "prediction": "Elodea", "answers": ["Apium"], "task": "hotpotqa_e", "length": 2671}
+{"_id": "290bb908487a6d2e88a53f395727e7225abdf1260ecaef68", "prediction": "Marino Girolami", "answers": ["Marino Girolami"], "task": "hotpotqa_e", "length": 3601}
+{"_id": "d11894d8411463b8ec99c7e12fe204b484174dceaf7ba0fb", "prediction": "Chemistry and Education/Writing", "answers": ["American educator, writer,"], "task": "hotpotqa_e", "length": 2545}
+{"_id": "d3b42d558b1a0e6d38a3cd63521f90726d0a0726bd3400c1", "prediction": "Intelligent design.", "answers": ["intelligent design"], "task": "hotpotqa_e", "length": 3776}
+{"_id": "0ebb34fb89eb103fe51560a7476ae614425ef52179dd32a9", "prediction": "Knowlton School", "answers": ["Knowlton Hall"], "task": "hotpotqa_e", "length": 2891}
+{"_id": "ef3faa552971c8c2dd04a40301cb536d27289864a68fe138", "prediction": "Washington, D.C.", "answers": ["Washington, D.C."], "task": "hotpotqa_e", "length": 2133}
+{"_id": "8e348ff8c7fe91fcdd2e8e125ae327716c5a04757dda4b4e", "prediction": "former tennis players", "answers": ["tennis player"], "task": "hotpotqa_e", "length": 752}
+{"_id": "3e29874cffa4ccc14dabef70cbc30a78da1c5e9a0458d947", "prediction": "No", "answers": ["no"], "task": "hotpotqa_e", "length": 1302}
+{"_id": "b6235b32ffcb6ea10641007b8fcddc811f28f8dd666db5eb", "prediction": "Pope John X.", "answers": ["Pope John X"], "task": "hotpotqa_e", "length": 3293}
+{"_id": "f0e60dbc6890e706835583d8f0df3574fae87ab373935366", "prediction": "Overijssel", "answers": ["Overijssel"], "task": "hotpotqa_e", "length": 3400}
+{"_id": "6a97b2edeb1facd7c602f5f63be3d99cb1d04672607309ed", "prediction": "Defender.", "answers": ["prevent the opposing team from scoring goals"], "task": "hotpotqa_e", "length": 3728}
+{"_id": "3f73dcdfb096a95f16485ba2632ca6424220d373502b7247", "prediction": "Godspell", "answers": ["Godspell"], "task": "hotpotqa_e", "length": 3964}
+{"_id": "47cd5e5112b2781b51123ef1de243e4e0818c2dd36fdaf5c", "prediction": "The Fatima Mansions.", "answers": ["The Fatima Mansions"], "task": "hotpotqa_e", "length": 3630}
+{"_id": "b6937f20ef0fdf18376c34d8ce3883c3a0b14f80428b221d", "prediction": "He was the grandfather of Michał Korybut Wiśniowiecki.", "answers": ["grandfather"], "task": "hotpotqa_e", "length": 2895}
+{"_id": "0c3cd45c98cc3577c0ca66908cfea21344e42aba1b031fcf", "prediction": "Duck.", "answers": ["duck"], "task": "hotpotqa_e", "length": 2491}
+{"_id": "c1139ce1c2c80bfe4dbf57d4a465d08a581afff06460cbcf", "prediction": "SomeKindaWonderful", "answers": ["Cleveland, Ohio"], "task": "hotpotqa_e", "length": 2928}
+{"_id": "14ca92f00403adf71a96bdad86851af3debf79c23a990e5f", "prediction": "Honeysuckle", "answers": ["Honeysuckle"], "task": "hotpotqa_e", "length": 1274}
+{"_id": "f0c380a8573b63e5d7ceede29d59b57f2ebcc285e8085faa", "prediction": "Fire!!", "answers": ["Castle of Frankenstein"], "task": "hotpotqa_e", "length": 3788}
+{"_id": "cf5c4cd4af1cb98d9c38964f3511f5845d5a57a0b7764ffb", "prediction": "Sam Taylor died at the age of 62 in Santa Monica, California. Chester Erskine died at the age of 80 in Beverly Hills, California.", "answers": ["Sam Taylor"], "task": "hotpotqa_e", "length": 3361}
+{"_id": "f9b8e98a905a8f658900099bb0b055459bbd4b25460f0eb0", "prediction": "The City of Newcastle.", "answers": ["City of Newcastle"], "task": "hotpotqa_e", "length": 3717}
+{"_id": "113e438a19f64d2493f5bc9431d10bd2c7c451415141d17a", "prediction": "Deutzia", "answers": ["Deutzia"], "task": "hotpotqa_e", "length": 1796}
+{"_id": "d9498c0fbfcb672ba5d114d73232817f7d7dd66ac68dc476", "prediction": "Tennis players.", "answers": ["former tennis player"], "task": "hotpotqa_e", "length": 2139}
+{"_id": "4f5b0bbb79b41096e3c08dc389fa73bed986646fbdd433f1", "prediction": "Reality television shows", "answers": ["American reality television series"], "task": "hotpotqa_e", "length": 455}
+{"_id": "91ff48762b9f238d01139bf7b4ef08c0fc4f1b504c6f38b9", "prediction": "No", "answers": ["yes"], "task": "hotpotqa_e", "length": 3216}
+{"_id": "406311f7ab0d87c7aa2a4886827e640bc0848e8206f816c2", "prediction": "2000", "answers": ["in 2000"], "task": "hotpotqa_e", "length": 2519}
+{"_id": "742da520ae9d71cce87bd2fe8b9e1f379159e6d8aa5b9e76", "prediction": "The Middle Palaeolithic period.", "answers": ["Middle Palaeolithic period"], "task": "hotpotqa_e", "length": 3618}
+{"_id": "4fbaf72dc6fc9bceb3746826579bb421ec7c2e65d97a5ef5", "prediction": "the gold medal", "answers": ["XXIV Summer Universiade"], "task": "hotpotqa_e", "length": 1735}
+{"_id": "63dbf610a548f46c6ab48873e867d8ac279baed6641602e2", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 3708}
+{"_id": "b25c605406d7d878df1dfab8199dbba951b14e1fb2a65a35", "prediction": "Echeveria", "answers": ["Echeveria"], "task": "hotpotqa_e", "length": 3796}
+{"_id": "36e5ab0a4991476aeab80eb9b897f09f27717796bc6aa908", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 1838}
+{"_id": "2e6f3da4d71681979d8faa844f9933978a68d0d278d21516", "prediction": "Chicken long rice\nHaupia\nʻUala (Hawaiian sweet potato)\nHawaiian sweet bread\nKālua puaʻa (Hawaiian roast pig)\nKulolo\nLaulau\nLomilomi salmon\nPoi\nPoke\nSquid lūʻau or chicken lūʻau\nTropical fruits", "answers": ["poi, Kalua pig, poke, lomi salmon, opihi, haupia"], "task": "hotpotqa_e", "length": 3336}
+{"_id": "cf1b601c9da569e7286d059d10e98ec641feaaa8e68f2989", "prediction": "11½ miles (19 km) north east", "answers": ["12+3/4 mi northeast of Liverpool"], "task": "hotpotqa_e", "length": 2867}
+{"_id": "32df1826569ba2db1e7372f1dd4515988607c0184b36301b", "prediction": "Ferdi Taygan is older.", "answers": ["Ferdi Taygan"], "task": "hotpotqa_e", "length": 2472}
+{"_id": "351bdad4f6d1d47cf299e4b7821c10cd834a874391987870", "prediction": "Albert Costa", "answers": ["Costa"], "task": "hotpotqa_e", "length": 3552}
+{"_id": "ea0c46ce6d9b17006228bd28e9b29f09285b9f0d4fd646f2", "prediction": "No", "answers": ["no"], "task": "hotpotqa_e", "length": 2969}
+{"_id": "b93a83c066e5eaed55de4cf4aa7833d7d232397d660b5e2f", "prediction": "Experimental indie rock bands.", "answers": ["heavy metal band"], "task": "hotpotqa_e", "length": 3285}
+{"_id": "8333f3e9e6703387546f30d78b61e07f326a7ea0aecdf557", "prediction": "Pennies from Heaven", "answers": ["Dennis Potter."], "task": "hotpotqa_e", "length": 2202}
+{"_id": "c4060a84a9f2595ffbb355e4a5cc6dea19235ab2adb3156d", "prediction": "No", "answers": ["no"], "task": "hotpotqa_e", "length": 3332}
+{"_id": "3cdadb5be4ed28de045f8fc2e382909260a2b70ff26884cb", "prediction": "tennis players", "answers": ["professional tennis player."], "task": "hotpotqa_e", "length": 3035}
+{"_id": "63a9ac0273294a8066497413f2a767fefdd9aa39949c7537", "prediction": "Tennis", "answers": ["tennis"], "task": "hotpotqa_e", "length": 3205}
+{"_id": "e431ceccabc23b11ab492c9bf6f28c3b5692616abfdf5c2e", "prediction": "Mount Smart Stadium", "answers": ["Ericsson Stadium"], "task": "hotpotqa_e", "length": 2883}
+{"_id": "c6d7b3b756c44de21e714d0d2e76444a864e7537944085b8", "prediction": "8,648", "answers": ["8,648"], "task": "hotpotqa_e", "length": 2053}
+{"_id": "a5c3e979e6783cb02797f4da64154ae9c1ec36dc5f39ea53", "prediction": "Les Temps Modernes", "answers": ["Les Temps modernes"], "task": "hotpotqa_e", "length": 3757}
+{"_id": "22184292bf7410d2d495211c1996a20a337933bfb4e1e343", "prediction": "Aksel Sandemose", "answers": ["Aksel Sandemose"], "task": "hotpotqa_e", "length": 3695}
+{"_id": "7d70e52523b8024edbe02108598febd714806f6c91d5a7a2", "prediction": "Luger P08", "answers": ["Luger P08"], "task": "hotpotqa_e", "length": 3741}
+{"_id": "c067169e689ae603986f5eb6f76f0a3c14f7b4183f3b73cd", "prediction": "Beaumont, Burnside, Cleland, Dulwich, Eastwood, Erindale, Frewville, Glenside, Glenunga, Greenhill, Hazelwood Park, Heathpool, Horsnell Gully, Leabrook, Leawood Gardens, Linden Park, Marryatville, Mount Osmond, Rose Park, Rosslyn Park, Skye, St Georges, Stonyfell, Toorak Gardens, Tusmore, Waterfall Gully, Wattle Park and part of Glen Osmond.", "answers": ["Dulwich"], "task": "hotpotqa_e", "length": 3731}
+{"_id": "a375f8b0473dca4fc0398789869b3a93d9705a98d5d09852", "prediction": "Jean Acker", "answers": ["Jean Acker"], "task": "hotpotqa_e", "length": 2379}
+{"_id": "698e2258fc3a07adfb7318286ac5d208ebd82585da5af8b3", "prediction": "1990", "answers": ["1990"], "task": "hotpotqa_e", "length": 2319}
+{"_id": "34d08a67ba7f669a04efb1c32fd70f739db7f82091725db7", "prediction": "Suburban", "answers": ["Hills"], "task": "hotpotqa_e", "length": 2998}
+{"_id": "2b6cd9aa92288838d707604fa1d2b37633700a112f964162", "prediction": "Tennis", "answers": ["tennis"], "task": "hotpotqa_e", "length": 1457}
+{"_id": "8244358650888a99d94359305e0f3815388f263c038c7c0f", "prediction": "Kurt Gerron", "answers": ["Kurt Gerron"], "task": "hotpotqa_e", "length": 3939}
+{"_id": "f13d74f97a90cb581d1685aa53317a17ae763a9b3c9f2d8b", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 3217}
+{"_id": "4d11069ad20503043d9ea9325e22a7453cd0ae5e13010e41", "prediction": "Marlborough", "answers": ["Marlborough"], "task": "hotpotqa_e", "length": 3829}
+{"_id": "1b881ee64e93f1e61f1df0334ac08bd45b493401f2354e0f", "prediction": "The Ten-Year Lunch: The Wit and Legend of the Algonquin Round Table is a 1987 American documentary film.", "answers": ["The Ten-Year Lunch"], "task": "hotpotqa_e", "length": 2072}
+{"_id": "0d54623736a9c423848fc0b278c2069aeb58de2882f7503e", "prediction": "Documentary filmmaker and film director.", "answers": ["director"], "task": "hotpotqa_e", "length": 2672}
+{"_id": "32ad36b963ce30dc10af96f5fd49615a08f314fd96498faf", "prediction": "459", "answers": ["179 women"], "task": "hotpotqa_e", "length": 1760}
+{"_id": "641565317ef243377df5dfb1fe84d3a56e521f89de5ce5e7", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 3674}
+{"_id": "e14effdfd1d2d53f9eb0f892aa7e91d04e846a77d24f397f", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 3705}
+{"_id": "e119cb76f4954626c5b4c08692acc7a83e7ddb7a9911dd59", "prediction": "Albert S. Rogell", "answers": ["B. Reeves Eason"], "task": "hotpotqa_e", "length": 2584}
+{"_id": "ad3b0ce8a9aaed70ba9db2fdae6d812ae61d39b7cb409376", "prediction": "Polypodium", "answers": ["Polypodium"], "task": "hotpotqa_e", "length": 3730}
+{"_id": "a1ad85740f9f027ce82ce54726c3db3c8fd251b83bec2a98", "prediction": "Albert", "answers": ["Albert"], "task": "hotpotqa_e", "length": 3271}
+{"_id": "74ff279e24bf3a6da0e4c2cfa171459c99b239b3fda296e9", "prediction": "Leslie Goodwins directed nearly 100 films between 1926 and 1967, whereas Kenneth Webb is not mentioned in the passages as directing a notable number of films.", "answers": ["Leslie Goodwins"], "task": "hotpotqa_e", "length": 2408}
+{"_id": "fa4172088faf2a2d18c5d480ea63bc75d1e5ac2376325e2d", "prediction": "Epic Records", "answers": ["A1 Recordings"], "task": "hotpotqa_e", "length": 2862}
+{"_id": "612b22ddfee72f7d30dcbdc9882a7ac1c3e87abe0279877d", "prediction": "Medinilla", "answers": ["Medinilla"], "task": "hotpotqa_e", "length": 4208}
+{"_id": "a596654591a6ea9372094158f43d848e900a3ccd098722aa", "prediction": "Newport County", "answers": ["Newport County"], "task": "hotpotqa_e", "length": 7431}
+{"_id": "515a5cbf646c2891fde47be6b8fa3442571938d8dac8827a", "prediction": "Eve Hewson", "answers": ["Eve Hewson"], "task": "hotpotqa_e", "length": 6860}
+{"_id": "672ac6b90aa47aabebb2d6d2403a49658880c5c864cd06e9", "prediction": "Kuno Becker", "answers": ["Eduardo Kuno Becker Paz"], "task": "hotpotqa_e", "length": 4166}
+{"_id": "67196e7c2c0882af46790e6cc5a0ec409d150f94954110e8", "prediction": "September 25, 2017", "answers": ["September 25, 2017"], "task": "hotpotqa_e", "length": 6847}
+{"_id": "e3569c47223f23fe2d38adc0478c64f81cdce476664d690c", "prediction": "Wayman Tisdale", "answers": ["Wayman Tisdale"], "task": "hotpotqa_e", "length": 7104}
+{"_id": "36b7e445832590b8ddf74995162cd5e94f7f620cdfc992dd", "prediction": "Flyweight", "answers": ["125 lb (57 kg)"], "task": "hotpotqa_e", "length": 7169}
+{"_id": "0a032a289e2074f40a2b77b495a5536a9228047944d84de5", "prediction": "Sunflower County", "answers": ["Sunflower County"], "task": "hotpotqa_e", "length": 4751}
+{"_id": "1b9be121d18a7cb78e9a92589a08d546467d40f05b9103d5", "prediction": "Arshile Gorky", "answers": ["Charles A. Agemian"], "task": "hotpotqa_e", "length": 7708}
+{"_id": "446bbf21f76c9f7a31bb4557ab81001f81ba6d60a408f8a2", "prediction": "There is no information about the first stop of OC Transpo Route 97 in the given passages.", "answers": ["about 7 million"], "task": "hotpotqa_e", "length": 5850}
+{"_id": "b893608c026ffd4b64b370af3989af857069c6718a309ae6", "prediction": "No", "answers": ["no"], "task": "hotpotqa_e", "length": 5047}
+{"_id": "543c49ded262212b1f208a815b3dd555980aef7bddf70a3e", "prediction": "Cuban", "answers": ["Cuban"], "task": "hotpotqa_e", "length": 6737}
+{"_id": "17572470452faa7617467f79050b8233589347c9ce587dba", "prediction": "David Dobkin", "answers": ["David Dobkin"], "task": "hotpotqa_e", "length": 5609}
+{"_id": "c477f09c951945bb8d5daadcd86e2d709b5825961199a2da", "prediction": "Kaka Bhaniawala", "answers": ["Lehmber Hussainpuri"], "task": "hotpotqa_e", "length": 5194}
+{"_id": "867dd76fd9f0ee20940d9a04a5cbe0db90c0e2cddecb989a", "prediction": "729", "answers": ["729 at the 2010 census"], "task": "hotpotqa_e", "length": 4198}
+{"_id": "3056ee6e5f33c35fc218f27c9afd5d6f2cd62a940b1d4373", "prediction": "No", "answers": ["no"], "task": "hotpotqa_e", "length": 4508}
+{"_id": "0df347189016b4d86b8f6d4086388a5ea318a08c468abba3", "prediction": "Istanbul, Turkey.", "answers": ["Istanbul, Turkey"], "task": "hotpotqa_e", "length": 7112}
+{"_id": "6df3c762e887dda4fcca8b392d592286de4d7ea336268db7", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 6700}
+{"_id": "4beefe473acde45f1accb31e6f45cff16e0a8b47eefd032e", "prediction": "18 or 19 November 1786", "answers": ["19 November 1786"], "task": "hotpotqa_e", "length": 5913}
+{"_id": "7ed6457b93b5ec221674c404539673d609a5fc333939c58c", "prediction": "John Biddle", "answers": ["John Scott Biddle"], "task": "hotpotqa_e", "length": 5943}
+{"_id": "fd19d9a4730c3a4ccb9e380f0f905c6c6890895a8dcd3dba", "prediction": "Baylor Bears", "answers": ["2015 Baylor Bears football team"], "task": "hotpotqa_e", "length": 6543}
+{"_id": "5fdd140211b5a3c1c879875b2c782e573cf4df4f68c8408e", "prediction": "No", "answers": ["no"], "task": "hotpotqa_e", "length": 6445}
+{"_id": "f0d13537c2b6b00c76660dd7af3d103fe2fb0cc747fdb677", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 7628}
+{"_id": "ac02f80140c85d06aef872b612de1974a7ece5e429b0d7d1", "prediction": "There are 9 girls and 8 boys in the seventeen sibling family featured on Counting On.", "answers": ["nine girls and 10 boys"], "task": "hotpotqa_e", "length": 5741}
+{"_id": "3161c51051d69b5360ba1832febba7e6d5f733878940b6c8", "prediction": "Eddie \"The Eagle\" Edwards", "answers": ["Eddie \"The Eagle\" Edwards"], "task": "hotpotqa_e", "length": 5483}
+{"_id": "db638307b229af402cb4c61e30ea5e392f6a9ad25b3d026e", "prediction": "Cranberry juice and cola.", "answers": ["lime"], "task": "hotpotqa_e", "length": 4196}
+{"_id": "a96ab885a132aad0f22735dad044516f01929c6be656b11a", "prediction": "Special Purpose Entities (SPEs)", "answers": ["independent ghost-entities"], "task": "hotpotqa_e", "length": 7110}
+{"_id": "ccfd4d4ec03f8160c14c99a647c5adc046dd1c86c0f7f7c7", "prediction": "Johny Hendricks", "answers": ["left"], "task": "hotpotqa_e", "length": 6957}
+{"_id": "abe6327f1b96aa87890c3f23ae2219f3b33ce8ca0e324334", "prediction": "Orono", "answers": ["Orono"], "task": "hotpotqa_e", "length": 7849}
+{"_id": "272b0faf5c71a3d8643a705c6748c11bf309d7fd62642bfa", "prediction": "1964", "answers": ["1965"], "task": "hotpotqa_e", "length": 5950}
+{"_id": "27a089389352bbc56ac06c79c190369a13f794bf84c6abd1", "prediction": "Warrington Town", "answers": ["Warrington Town Football Club"], "task": "hotpotqa_e", "length": 5861}
+{"_id": "d72f85795be5a873d62c8694c0c043cb3311ebcb5480316c", "prediction": "Dallas Cowboys", "answers": ["Dallas Cowboys"], "task": "hotpotqa_e", "length": 6397}
+{"_id": "fe60adfdc85ed9f3f7bfa2bbeea5fcd1e6f4383b94f3818f", "prediction": "Volcanic Sprint", "answers": ["Volcanic Sprint"], "task": "hotpotqa_e", "length": 7247}
+{"_id": "534da8dc3d50689a9e7143a536b4a24bafde0ec67c58ee69", "prediction": "Wire", "answers": ["Wire"], "task": "hotpotqa_e", "length": 7879}
+{"_id": "64bba86b667bc9dd60aaa6c30a2d7403629fd6daabf6d43e", "prediction": "Beer", "answers": ["pale lager"], "task": "hotpotqa_e", "length": 7598}
+{"_id": "d3493a99d0e83a5431e4a5d829bb241692bae70fe1d3bf17", "prediction": "Forever Living Products", "answers": ["Aloe Vera of America"], "task": "hotpotqa_e", "length": 6106}
+{"_id": "2594c28a57bcfa0b0f14888647e9c54a8ea56710e4cdf20b", "prediction": "It is based on the play of the same name by Leon Abrams and George Abbott.", "answers": ["American theater producer and director, playwright, screenwriter"], "task": "hotpotqa_e", "length": 4512}
+{"_id": "b54ac67dca39af1dd1a86e7e4ee7e1bc9f35ea6716ab4811", "prediction": "Flowering plants.", "answers": ["flowering plants"], "task": "hotpotqa_e", "length": 4553}
+{"_id": "68d6387b2173009b7b4587961cbc84bb41d92008ac414318", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 6451}
+{"_id": "f20615e0448685d40d163f353996c04d1f18886424daebab", "prediction": "They both have poetry awards in their names.", "answers": ["poet and novelist"], "task": "hotpotqa_e", "length": 7660}
+{"_id": "49a3b29b551e8298417c9fc95afd41714666e6d0ee375076", "prediction": "York County", "answers": ["York County"], "task": "hotpotqa_e", "length": 5098}
+{"_id": "103044e2e51342be7c7ccc79b5b7bf488a14c44f08b549fd", "prediction": "Tamil", "answers": ["Tamil"], "task": "hotpotqa_e", "length": 7851}
+{"_id": "b4fb77d92f0262f9fe4a9e4a494d765dfb72ba9fbc0e7705", "prediction": "Salt Lake City International Airport", "answers": ["Brainerd Lakes Regional Airport"], "task": "hotpotqa_e", "length": 7651}
+{"_id": "3eac2334d7487e0af820564d78caebec2622d63fd8022b46", "prediction": "Round Table Pizza", "answers": ["Round Table Pizza"], "task": "hotpotqa_e", "length": 7158}
+{"_id": "3d454576f6403ef5b8967936713e4eee569ec1e2ba5883bc", "prediction": "Bassist", "answers": ["vocalist"], "task": "hotpotqa_e", "length": 7235}
+{"_id": "56d2ecd968aaef6194dcf7de6e3844c9225d8e9ec1a0a3ce", "prediction": "2007", "answers": ["June 17, 2007"], "task": "hotpotqa_e", "length": 6832}
+{"_id": "357ff341f41441ea29bd4484907bdf4d692bf8b5c95360de", "prediction": "Yes", "answers": ["no"], "task": "hotpotqa_e", "length": 6184}
+{"_id": "19f54353e2bfbcb70242503fc63eda818bbb12de170b844e", "prediction": "Manchester", "answers": ["Manchester"], "task": "hotpotqa_e", "length": 7287}
+{"_id": "2a251fd6ed5b056481566cbbbb2cc3c0cd502dc3c73ce174", "prediction": "875-acre", "answers": ["875 acre"], "task": "hotpotqa_e", "length": 7567}
+{"_id": "524d2df4e388792739e2486b131d791c9966e797f4dd9492", "prediction": "2003", "answers": ["1976"], "task": "hotpotqa_e", "length": 5564}
+{"_id": "53ece48014dc927d7323861f5ae124b12d85aef7167fd61e", "prediction": "Bribery", "answers": ["filibuster"], "task": "hotpotqa_e", "length": 5564}
+{"_id": "1759fb7ee8c0212de7080f855880cf3cc1dec5e0c33b7709", "prediction": "Kate", "answers": ["Sarah Hurst in \"Easy Virtue\""], "task": "hotpotqa_e", "length": 7496}
+{"_id": "60748959911054eb39c6d0d3c05f7f7d71696bca34ad238e", "prediction": "Scotland", "answers": ["Scotland"], "task": "hotpotqa_e", "length": 4500}
+{"_id": "fc448f73b4362c83fcdbd5800d458f810a6de9afad0aff79", "prediction": "Colorado State Treasurer", "answers": ["U.S. Representative for Colorado 's 6 congressional district"], "task": "hotpotqa_e", "length": 7927}
+{"_id": "98a233db38f543c779e7b0cef69c13ed9d90a5cd69a81bf2", "prediction": "Macy's, Nordstrom, Bloomingdale's, and Saks Fifth Avenue.", "answers": ["three Macy's stores, Sears, Nordstrom, Bloomingdale's, and Saks Fifth Avenue"], "task": "hotpotqa_e", "length": 7063}
+{"_id": "c9845fb4984b617ff7dc55fdf38336e403dffc2b76895954", "prediction": "13", "answers": ["13"], "task": "hotpotqa_e", "length": 4497}
+{"_id": "e165b7488915cd9a46cf08559023a2817cf8f8f990d1c1d7", "prediction": "1937", "answers": ["1926"], "task": "hotpotqa_e", "length": 6616}
+{"_id": "0b6ddb583fa1df95b1b4c7961f7affcc7c6266e520826484", "prediction": "Newfoundland", "answers": ["Newfoundland and Labrador"], "task": "hotpotqa_e", "length": 6263}
+{"_id": "9a161f7868d7a430dfa3335ec69d84f24435498665d9fa18", "prediction": "Democratic", "answers": ["Democratic"], "task": "hotpotqa_e", "length": 6210}
+{"_id": "67b35aba73a41505e6399077df2fbe174ac5dbdef43d4c84", "prediction": "Atlantic League of Professional Baseball, Canadian American Association of Professional Baseball, Can-Am League, and Futures Collegiate Baseball League.", "answers": ["Canadian-American Association of Professional Baseball"], "task": "hotpotqa_e", "length": 5794}
+{"_id": "10e7dcc60e5dc9abd1404998ac8faffcc1f086f353496f21", "prediction": "The National Society of Daughters of the American Revolution (NSDAR).", "answers": ["the National Society of Daughters of the American Revolution"], "task": "hotpotqa_e", "length": 7583}
+{"_id": "3ee69bccf187ffef58557d9b803ad4d02c91d9f243b123e6", "prediction": "The Community of St Mary the Virgin (CSMV).", "answers": ["The Community of St Mary the Virgin (CSMV)"], "task": "hotpotqa_e", "length": 6641}
+{"_id": "5dc49720fb5640af74e35cfa0d0506ba9d24fcf4716f0ba6", "prediction": "Human Drama", "answers": ["Human Drama"], "task": "hotpotqa_e", "length": 7218}
+{"_id": "83064e2a0fb5187950fe03a49d84d1f936642098ec26050c", "prediction": "1988", "answers": ["1988"], "task": "hotpotqa_e", "length": 7955}
+{"_id": "edd45d630ff415b7bd90c0065eca6f7612385c14f24d1054", "prediction": "R-Point.", "answers": ["R-Point"], "task": "hotpotqa_e", "length": 6289}
+{"_id": "c944918cb947332b0368cc86bdb9b8b3ac7b91f3a924105a", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 6362}
+{"_id": "707ae5ee488227619cbd0c8bbd094b00f71042170a4a6e5a", "prediction": "Washington, D.C.", "answers": ["National Mall"], "task": "hotpotqa_e", "length": 7951}
+{"_id": "834ced6842436a1c77d203700bfcb2526641b70c04101553", "prediction": "Tie Domi", "answers": ["Tie Domi"], "task": "hotpotqa_e", "length": 5764}
+{"_id": "780f15259479e8965d474efc011eb220ac4078da86e8dc19", "prediction": "Video games and novels.", "answers": ["novel"], "task": "hotpotqa_e", "length": 6091}
+{"_id": "c18c76f9efb43dc4d15ce54891af6a60178be55f1eec2656", "prediction": "Arnel Pineda", "answers": ["Arnel Campaner Pineda"], "task": "hotpotqa_e", "length": 7002}
+{"_id": "c6563d0cf1fffa8e0296f4b36bc0d2673178b861e3dee076", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 5979}
+{"_id": "acbd21ef5a1a1c7de236764c916a2f3380fdcde97e60f76e", "prediction": "Austrian Volksbanks", "answers": ["Austrian Volksbanks"], "task": "hotpotqa_e", "length": 7870}
+{"_id": "8318ea1b9fd0443387e6bcd5382933a05614955578f7b95b", "prediction": "Ellie Kemper", "answers": ["Ellie Kemper"], "task": "hotpotqa_e", "length": 7626}
+{"_id": "74f2fce3240dd7e91f9522b9cbb9e10f43f16fdb0c22e7fa", "prediction": "Greg Graffin", "answers": ["Gregory Walter Graffin"], "task": "hotpotqa_e", "length": 6333}
+{"_id": "1f977db197f798f4652e637fcb729222d3a601095a2efbb9", "prediction": "John Waters.", "answers": ["John Waters"], "task": "hotpotqa_e", "length": 6090}
+{"_id": "43761670de65d68410a143bb8a9cf52ed972833760afcd46", "prediction": "They are both writers, with Rosario Castellanos being a Mexican poet and author, and Arthur Hailey being a British-Canadian novelist.", "answers": ["poet and author."], "task": "hotpotqa_e", "length": 7661}
+{"_id": "5acfa81613af9e8a5e838d265702dcf26ed6edc6d67cf1ee", "prediction": "Street Stock", "answers": ["Dirt track racing"], "task": "hotpotqa_e", "length": 6513}
+{"_id": "612961d8f4c473a6be137dca843cdd647da01c26898aff1c", "prediction": "Gaahl", "answers": ["Kristian Eivind Espedal"], "task": "hotpotqa_e", "length": 6023}
+{"_id": "a6e57d5dfcbdc68035395fe57842144769450fc962f5bbcd", "prediction": "Austria", "answers": ["Innviertel"], "task": "hotpotqa_e", "length": 5670}
+{"_id": "4ca4c647a9e240cc57709696edd881c49eb11fef88ad9a3d", "prediction": "alcoholic drinks", "answers": ["alcoholic drinks"], "task": "hotpotqa_e", "length": 5539}
+{"_id": "9c0f9782d1b8ab3a3b6151ee92ab597809a63b7855b53fde", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 7104}
+{"_id": "965ced9092e97018ab3df95a26b419b8d9bb2eedff7df7ed", "prediction": "Field of Dreams", "answers": ["\"Field of Dreams\""], "task": "hotpotqa_e", "length": 5762}
+{"_id": "d9372601710f86069b2f6a90732bf62221ac2ee53283a060", "prediction": "Tim Rice and Andrew Lloyd Webber", "answers": ["Andrew Lloyd Webber and Tim Rice"], "task": "hotpotqa_e", "length": 7659}
+{"_id": "54d3dd6a59258411edd6332786b12d0e9a740adca49d1243", "prediction": "London", "answers": ["United States"], "task": "hotpotqa_e", "length": 7895}
+{"_id": "03601da8429b0138e5868de4b7e6a44850f1fb1d971e6219", "prediction": "Sir George Cayley", "answers": ["George Cayley"], "task": "hotpotqa_e", "length": 6579}
+{"_id": "a8071814ddd92750ca2585edb0bded153054a6dc2ab57444", "prediction": "2011", "answers": ["1963"], "task": "hotpotqa_e", "length": 7077}
+{"_id": "af807e0e8fc1fe70801aa86b6b1823d546082d9ce6a86c9a", "prediction": "Romantic era", "answers": ["Romantic"], "task": "hotpotqa_e", "length": 4685}
+{"_id": "3b8cdf73ba6193a99f558f6c3436f4fb6337eb509cbc0c20", "prediction": "Kenny Young", "answers": ["Kenny Young"], "task": "hotpotqa_e", "length": 6427}
+{"_id": "996c58a6f7fd10715191104b726d87dd079e7aa8e6fabef9", "prediction": "Asia", "answers": ["Europe"], "task": "hotpotqa_e", "length": 7729}
+{"_id": "09221499868bb9e1a230f8530fa4759e812e5f2738d12942", "prediction": "Humberside", "answers": ["former English county of Humberside"], "task": "hotpotqa_e", "length": 6951}
+{"_id": "5257604118431dffd9dc5d75a1aad6826af4ad76296020b8", "prediction": "Wennington", "answers": ["Borwick railway station"], "task": "hotpotqa_e", "length": 5102}
+{"_id": "19092acc2a874e7d35633f7e9e8fc128720344b066244f04", "prediction": "Roslyn Castle", "answers": ["Roslyn Castle"], "task": "hotpotqa_e", "length": 7055}
+{"_id": "570727521e78a04c7d8d892fdd8bfbdce0d178f3d4bcceb4", "prediction": "a minor basilica", "answers": ["a minor basilica"], "task": "hotpotqa_e", "length": 6912}
+{"_id": "dd5ae003e007a523e056e069ad0ad058847299f004c646f9", "prediction": "Tony Aloupis", "answers": ["Tony Aloupis"], "task": "hotpotqa_e", "length": 7922}
+{"_id": "0108dc554454ee9588a103ed696da4a5b64baabaf365c0c7", "prediction": "August Heckscher.", "answers": ["August Heckscher"], "task": "hotpotqa_e", "length": 5267}
+{"_id": "ee2647e9cf29dcab9c66ffea03e05e9ef7c44e0e61eee68c", "prediction": "24,283", "answers": ["44,300"], "task": "hotpotqa_e", "length": 7261}
+{"_id": "9dcf45062f2d1dfd6e6ff6773f094c49bd8e9192e19579e2", "prediction": "Bad Meets Evil", "answers": ["Royce da 5'9\" (Bad) and Eminem (Evil)"], "task": "hotpotqa_e", "length": 6376}
+{"_id": "abc6d05521f1a8c4b52bbe07594fad8ffa11a308b12bde79", "prediction": "Ice Princess", "answers": ["Ice Princess"], "task": "hotpotqa_e", "length": 7837}
+{"_id": "424622e2007e25c517e81ba03461835dcfcca025f4df671d", "prediction": "The Palace of Auburn Hills", "answers": ["Prudential Center"], "task": "hotpotqa_e", "length": 5348}
+{"_id": "af401214b4328a21ab4a861f4fe96205e1672a4ea40c7412", "prediction": "studied Arabic grammar with the famous poet Abul ʿAla Al-Maʿarri.", "answers": ["poet, and writer"], "task": "hotpotqa_e", "length": 6544}
+{"_id": "7504ff847adb8044a6217e1cee5d4e7f5d3b80a7adb9d9fe", "prediction": "331", "answers": ["331 episodes"], "task": "hotpotqa_e", "length": 12402}
+{"_id": "ede6ce1feb76fdaa7620979969e590879f671826f7242468", "prediction": "2016–17", "answers": ["2016–17 NHL season"], "task": "hotpotqa_e", "length": 10276}
+{"_id": "5ead25955ee172d556fdd54032c508a9786b300dd49e4757", "prediction": "The Clash, Will Self, Jock Scott, Shane MacGowan, Neneh Cherry, Joe Rush of Mutoid Waste, Keith and Kevin Allen, Steve Underground, John The Hat, and Ian Bone of Class War.", "answers": ["Neneh Cherry"], "task": "hotpotqa_e", "length": 9826}
+{"_id": "6cecb5d2eb8501784c5809ff30e5234294d8dddb5adeafbb", "prediction": "Both bands have had albums certified platinum in Canada.", "answers": ["Passion Pit is an American indietronica band"], "task": "hotpotqa_e", "length": 11157}
+{"_id": "5c5eaa11039b3bdb361961c2d4bb541e491a596c5c5d4465", "prediction": "July 14, 1978", "answers": ["1924November 22, 1993"], "task": "hotpotqa_e", "length": 10767}
+{"_id": "196b9a04e7094ea26773c644198b96abd263bc6c4b59fb56", "prediction": "Beauty and the Beast", "answers": ["Beauty and the Beast"], "task": "hotpotqa_e", "length": 12040}
+{"_id": "78682a3d9080bcfc0e1c590923916c0626bc8b9eef9f3f63", "prediction": "Ohio River.", "answers": ["Ohio River"], "task": "hotpotqa_e", "length": 10787}
+{"_id": "83ae690d0a9ba0a57a55361314f5d067f2189375d57c499f", "prediction": "Vice President", "answers": ["Vice President"], "task": "hotpotqa_e", "length": 12457}
+{"_id": "269e030ec5f2155d1d90f3e9724dc1f6e523a949f27d14d7", "prediction": "Yes", "answers": ["no"], "task": "hotpotqa_e", "length": 11628}
+{"_id": "2e6379f42b2607eb9abee867eaf184e657d4534d64279aaa", "prediction": "72", "answers": ["4"], "task": "hotpotqa_e", "length": 10015}
+{"_id": "96ce2b141e2b896cb4fbe983da329a08e30c0e26435a3490", "prediction": "Deputy Führer", "answers": ["Appointed Deputy Führer"], "task": "hotpotqa_e", "length": 11927}
+{"_id": "565b45f2de30ab72fc240bd91838596f44c01a33da9da499", "prediction": "1970", "answers": ["at age 27"], "task": "hotpotqa_e", "length": 11995}
+{"_id": "511cc0ce50a9d666a125314767f8cc676db17946184647c6", "prediction": "New York Giants", "answers": ["New York Giants"], "task": "hotpotqa_e", "length": 8582}
+{"_id": "ce41e73398410371a755f618a953a68b14f75b8f2e8a62cc", "prediction": "King Richard I of England.", "answers": ["Duchess Eleanor of Aquitaine"], "task": "hotpotqa_e", "length": 11543}
+{"_id": "201f67af75b1eb218e75959d0f32fc48c614c41547ae705a", "prediction": "published campaign setting", "answers": ["published campaign settings"], "task": "hotpotqa_e", "length": 11490}
+{"_id": "f41c73e13b88d2fd0398cb6956ee2a4a03cb6bfab6ece968", "prediction": "Pat Conroy", "answers": ["Two of his novels, \"The Prince of Tides\" and \"The Great Santini\", were made into Oscar-nominated films."], "task": "hotpotqa_e", "length": 10783}
+{"_id": "adc25aa41f4a6daddcf47d85dae25ef6c84ef09f934effe5", "prediction": "Chris Corbould and Neil Corbould", "answers": ["Chris Corbould and Neil Corbould"], "task": "hotpotqa_e", "length": 11719}
+{"_id": "7cdceb45cfb9439bd41148788e5cf2f0e8a5cb99a0e09729", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 9019}
+{"_id": "b31526033c3f9cc83adf49c8585353bd6d269b58c65e5b26", "prediction": "There is no information in the given passages about Josh Abraham selling albums with Adam Lambert.", "answers": ["40 million"], "task": "hotpotqa_e", "length": 12213}
+{"_id": "064961ef65cb72f581caaa1101c49e14fc37e564d11df840", "prediction": "Duke Cunningham", "answers": ["Duke Cunningham"], "task": "hotpotqa_e", "length": 11565}
+{"_id": "6c8952c7678c9c2db0a6cdaed0f8aa573898a297f1947e8d", "prediction": "76,416", "answers": ["76,416"], "task": "hotpotqa_e", "length": 10736}
+{"_id": "da8d77c1023a7e289ee82bdf15e0cae9131d31472f1c118a", "prediction": "hardcore pornography", "answers": ["hardcore pornography"], "task": "hotpotqa_e", "length": 9275}
+{"_id": "82a1a48996ef392d6abe74ea1d2b0a807c0f4d859c4026ac", "prediction": "1964-1974", "answers": ["1964 to 1974"], "task": "hotpotqa_e", "length": 9314}
+{"_id": "fe822e0e39123d0e02f43150e2ae8d6413bedb860d6f5096", "prediction": "Ang Lee", "answers": ["Ang Lee"], "task": "hotpotqa_e", "length": 12201}
+{"_id": "7eeac03a7906c808eba81e4f6bfa8deb4cae65f10134c0a8", "prediction": "Old Frisian", "answers": ["between the 8th and 16th centuries"], "task": "hotpotqa_e", "length": 10656}
+{"_id": "0bbd28f6cdb99eca32bfebb135b10db570568655b5924475", "prediction": "West Coast", "answers": ["west"], "task": "hotpotqa_e", "length": 9050}
+{"_id": "fd61851f598d55c56d1d32d500d54f356919668ee76a5fa0", "prediction": "Siwi", "answers": ["Berber"], "task": "hotpotqa_e", "length": 10555}
+{"_id": "192e872cf190ea4e64fd401a32a3ea0426dc488afe3702ad", "prediction": "Ottawa", "answers": ["Odawa"], "task": "hotpotqa_e", "length": 10290}
+{"_id": "f8832527b9381e131ecdcb4a81278fbcdd2b5e56c6215744", "prediction": "Vikram", "answers": ["Vikram"], "task": "hotpotqa_e", "length": 11430}
+{"_id": "92be640857b6dd2e6beef9c07b7c3805d358192150971dda", "prediction": "1912", "answers": ["8 April 1912"], "task": "hotpotqa_e", "length": 9507}
+{"_id": "cf39373b78df19018180ae54b7006205fdb85ec4e708a95d", "prediction": "Katarina Witt", "answers": ["Katarina Witt"], "task": "hotpotqa_e", "length": 8489}
+{"_id": "df556f7b2e1c7fd14f1a64900f8d71c6207f8a85145e4ca3", "prediction": "1994", "answers": ["1994"], "task": "hotpotqa_e", "length": 10179}
+{"_id": "bc5591c4ef3725d6bceb5072faca9aa4c2601ae4880576c1", "prediction": "1982", "answers": ["1982"], "task": "hotpotqa_e", "length": 11762}
+{"_id": "5cd75384ae57167b574fdbfd8bffcdab6250d77f1f60b82d", "prediction": "1999 Galtür avalanche", "answers": ["The Galtür avalanche"], "task": "hotpotqa_e", "length": 9110}
+{"_id": "93c3a1f8052b6bd15bd06aede801c1df67cf08ca08a83e40", "prediction": "British", "answers": ["British"], "task": "hotpotqa_e", "length": 12441}
+{"_id": "7bc9d324dd6195d9ad2395b87601f929de0c15c668e9e4cb", "prediction": "Jean Vigo", "answers": ["Sri Lankabhimanya Lester James Peries"], "task": "hotpotqa_e", "length": 8257}
+{"_id": "1a16dfb39ae6cf0874aefc9d22d1cc299f3003fc6d8b19e2", "prediction": "Rafael Palmeiro", "answers": ["Rafael Palmeiro Corrales"], "task": "hotpotqa_e", "length": 11389}
+{"_id": "89d46cdb218ad0444871f9b44dea057e0cdbd6c08be8d9c1", "prediction": "Pandosia and Heraclea.", "answers": ["Pandosia and Heraclea"], "task": "hotpotqa_e", "length": 10741}
+{"_id": "7fc4f4cb1fcc00df95a8da591ea8da17402cb1b21a5d89a6", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 11917}
+{"_id": "1c8e5b88bcc66fc4ab1f449f1d73000b65dca26f0adeaea8", "prediction": "Broad Peak is higher than Nanda Devi.", "answers": ["Broad Peak"], "task": "hotpotqa_e", "length": 9940}
+{"_id": "d9f17e2af21b4cb7f747c0165eae3fad67289e74bbf58edb", "prediction": "Angel", "answers": ["Dollhouse"], "task": "hotpotqa_e", "length": 10758}
+{"_id": "e1b6edc0310b4329374915aa013f0870213342822a728142", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 10867}
+{"_id": "ecde9842060b9101fa9edceed35332413b01be43d4940652", "prediction": "1861–1865", "answers": ["1861–65"], "task": "hotpotqa_e", "length": 11497}
+{"_id": "d446d8df1f9ee4df7970921b2e384a8745bde88ba78d28ca", "prediction": "Matt Winer", "answers": ["Matthew Ward Winer"], "task": "hotpotqa_e", "length": 11248}
+{"_id": "b382a3ff1ff044c91cba6eafbbae2a2be82e107109d35688", "prediction": "Martha Wainwright", "answers": ["Gary Lightbody"], "task": "hotpotqa_e", "length": 10307}
+{"_id": "968aa55cb369733b029eb056aa760feea966aa8e15a51e69", "prediction": "Waylon Smithers", "answers": ["Mr. Smithers"], "task": "hotpotqa_e", "length": 11450}
+{"_id": "f3c23b4984f14199f12862795aeb344f19c97bfc9c586a8f", "prediction": "Nobel Prize in Physics", "answers": ["Nobel Prize"], "task": "hotpotqa_e", "length": 9601}
+{"_id": "347631d4064c4de0fd85f68be4c485d493832a0993e15c8a", "prediction": "roman à clef", "answers": ["novel with a key"], "task": "hotpotqa_e", "length": 8397}
+{"_id": "2535d2242d639673fd521b46e330d67a5ebfc00d336b8148", "prediction": "There is no information about the birthplace of Ezequiel Lázaro in the given passages.", "answers": ["about 700 km"], "task": "hotpotqa_e", "length": 9348}
+{"_id": "d67f895d64615878d08f14f97bdbe5627d4a6b0b087934c3", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 11662}
+{"_id": "b456e2eca42b92c754f2e82f0d2a764bdf68027b99ab28ab", "prediction": "No", "answers": ["no"], "task": "hotpotqa_e", "length": 12023}
+{"_id": "1f9db2aff02d37612e21ae47ae43ba53ce131848900865ff", "prediction": "Charice", "answers": ["Charice"], "task": "hotpotqa_e", "length": 9768}
+{"_id": "6153db5292ec46160b06ceb90f401de731655879157b30d7", "prediction": "Wolfgang Amadeus Mozart", "answers": ["Gaspare Luigi Pacifico Spontini"], "task": "hotpotqa_e", "length": 10652}
+{"_id": "d5ae58ef8ec494f647b723350519f29086be3310753bc189", "prediction": "stoneware", "answers": ["stoneware"], "task": "hotpotqa_e", "length": 10805}
+{"_id": "0e4fac2d1da09fad0958e11c5d6d7d8cbe4143e5a105e084", "prediction": "Man Haron Monis", "answers": ["Man Haron"], "task": "hotpotqa_e", "length": 12480}
+{"_id": "7b69804ce6e81e910172ddbbf90fd410a6e4a1148e64edc3", "prediction": "English writers.", "answers": ["writer"], "task": "hotpotqa_e", "length": 11759}
+{"_id": "b3a7f54e9296352218fb4baddc57bb81a51e142ca52457c6", "prediction": "Larnelle Harris", "answers": ["Larnelle Harris"], "task": "hotpotqa_e", "length": 9418}
+{"_id": "8149fb371e91a3c4e6776957a8591519d55910bb5029e267", "prediction": "United Airlines Flight 93", "answers": ["Pennsylvania"], "task": "hotpotqa_e", "length": 12126}
+{"_id": "adde6fd9958589ef78af9e192aeffd8e48dfbd8d35014f4f", "prediction": "The Chronicles of England, Scotland, and Ireland", "answers": ["Holinshed's Chronicle"], "task": "hotpotqa_e", "length": 11278}
+{"_id": "8cca1e7fcd97cbf55aa9d5da29435c093ae859298aa93532", "prediction": "University of Southern California.", "answers": ["Europe"], "task": "hotpotqa_e", "length": 8159}
+{"_id": "43f9f07e078ad382bccac015fa6587781261c33ac7ac482d", "prediction": "Augustus", "answers": ["Caligula"], "task": "hotpotqa_e", "length": 11164}
+{"_id": "af9d8c20fdfa2ae16a43216cb6af05d0d3b21d9f378d789d", "prediction": "Brazil", "answers": ["South America"], "task": "hotpotqa_e", "length": 10618}
+{"_id": "a6cda30d0950f2d8b0e5c1ee89466cbc43b37be7daedcb8b", "prediction": "Emilia-Romagna", "answers": ["Emilia-Romagna Region"], "task": "hotpotqa_e", "length": 9950}
+{"_id": "1ae026dfc12f5b58aeaf3bb8631d67f416a8d4e22a47d1de", "prediction": "Christopher Nolan", "answers": ["Christopher Nolan"], "task": "hotpotqa_e", "length": 10944}
+{"_id": "71756b5543af5fda3edd594b79e821057ed89842f05de232", "prediction": "Franco Dragone", "answers": ["Franco Dragone"], "task": "hotpotqa_e", "length": 10357}
+{"_id": "1007a41111f836d4378b6ea28047a2b8ed71f7639720f379", "prediction": "Captain J. Edward Snyder", "answers": ["Rear Adm. J. Edward Snyder"], "task": "hotpotqa_e", "length": 12275}
+{"_id": "d060707db8ed61479c28b67cc855a87f149366114d91a3d9", "prediction": "March 9, 1961", "answers": ["March 9, 1961"], "task": "hotpotqa_e", "length": 12019}
+{"_id": "b5d8cd10520b2a67b18af73e7c219160f13dd5b4f60ebd18", "prediction": "11 September 1996", "answers": ["17 December 1998"], "task": "hotpotqa_e", "length": 11327}
+{"_id": "566cf1595f78c029378e6220cf960d0b791084225f60ccda", "prediction": "Kongo", "answers": ["Kongo"], "task": "hotpotqa_e", "length": 8632}
+{"_id": "8624d9d6e32f86e7fb8f13e128a1b602b4e3d3524fb51285", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 12247}
+{"_id": "7caf887e7c7af6c1dbe41d09aa5138aa6147234257b15c42", "prediction": "Kurt Vonnegut", "answers": ["Kurt Vonnegut"], "task": "hotpotqa_e", "length": 11350}
+{"_id": "2c5815e557ce43e5e8e30c8fc900c6cff7785afbcf7a8f6a", "prediction": "Kingdom of Dalmatia", "answers": ["held in Kingdom of Dalmatia"], "task": "hotpotqa_e", "length": 10501}
+{"_id": "a2d25d651cee56af2fe24ed869f0274b0d67da4df39aa766", "prediction": "2002", "answers": ["2002 Winter Olympics"], "task": "hotpotqa_e", "length": 8662}
+{"_id": "a57934ad2c268320ec163b14aaafce3cb5a5e85a19ba98ca", "prediction": "330 million", "answers": ["more than 330 million people"], "task": "hotpotqa_e", "length": 8842}
+{"_id": "c32e0b8f765bc19e2031e307cc3124da79557c834fa6f2c1", "prediction": "No", "answers": ["no"], "task": "hotpotqa_e", "length": 10462}
+{"_id": "ef451df937dcec6ff22568b63d694787c5157b9bffe5330e", "prediction": "The Dear Hunter", "answers": ["God Lives Underwater"], "task": "hotpotqa_e", "length": 8078}
+{"_id": "27fa190091460428cd374c49583b9721fbd4a742e0e5e66e", "prediction": "Hawaii", "answers": ["Honolulu"], "task": "hotpotqa_e", "length": 8101}
+{"_id": "8afb945b03f9cfe83f2fb7e4a40c5b3ba24ca0049b544a2f", "prediction": "No", "answers": ["no"], "task": "hotpotqa_e", "length": 9590}
+{"_id": "88e3bc9e0eee130cd7cd23ebed32a425fd76a7bc566a64bd", "prediction": "The New York City Police Department's 83rd Precinct.", "answers": ["NYPD's 83rd Precinct"], "task": "hotpotqa_e", "length": 10365}
+{"_id": "5dea8866ddd6e6bd76e82c8d8cea1dbfc441e58ec31724d6", "prediction": "Hamlet", "answers": ["Hamlet"], "task": "hotpotqa_e", "length": 10673}
+{"_id": "6d83121d4b9d36d10b3eeaeabe37ca728dcdbcea9541b57b", "prediction": "Charlie Albright", "answers": ["Atsushi Ogata"], "task": "hotpotqa_e", "length": 10727}
+{"_id": "e1e55770514a9703deca2c727ae0f3cee68eb4962a17e532", "prediction": "Barnoldswick", "answers": ["Barnoldswick"], "task": "hotpotqa_e", "length": 8159}
+{"_id": "7681a4ae6d92c179c938738ad170b6626534556d9ea993b6", "prediction": "1926", "answers": ["1902"], "task": "hotpotqa_e", "length": 10195}
+{"_id": "e71fd79076da6ff2259a596d154b78301488419a5736ac21", "prediction": "No", "answers": ["no"], "task": "hotpotqa_e", "length": 8655}
+{"_id": "62a408168b2ac7a324d11507f0e8c7eaea02cd4992d57a4b", "prediction": "Marlon Stöckinger", "answers": ["Marlon Stöckinger"], "task": "hotpotqa_e", "length": 11739}
+{"_id": "1bfa4cb5fc609ed2f83787800d112fa7fcb5cdcbef7756fa", "prediction": "1520", "answers": ["from around 1520"], "task": "hotpotqa_e", "length": 10375}
+{"_id": "52159c74eaf34175bef4c0c07531f5908ba3eb1d390ca97d", "prediction": "Mayiladuthurai", "answers": ["Tharangambadi"], "task": "hotpotqa_e", "length": 9438}
+{"_id": "09178d7f5a8d0871547a5c3959d36176d1fdbf7df05cc70d", "prediction": "Netflix", "answers": ["Netflix"], "task": "hotpotqa_e", "length": 8723}
+{"_id": "d272e512f88abaea0d3b985a06f50562a6081493171a3c49", "prediction": "The Battle of Matewan", "answers": ["Battle of Matewan"], "task": "hotpotqa_e", "length": 11959}
+{"_id": "726f8ef3f7163c31b7a13fd8cbd5f6d2a2a8f1f39dea3669", "prediction": "Eastern Conference champions Orlando Magic and Western Conference champions Houston Rockets.", "answers": ["Eastern Conference champion Orlando Magic against the Western Conference champion Houston Rockets."], "task": "hotpotqa_e", "length": 11880}
+{"_id": "b8498b4a243fb9cbca1c96ac7dc9a183d8cc52c475515bd6", "prediction": "Pride Fighting Championships", "answers": ["MMA"], "task": "hotpotqa_e", "length": 9916}
+{"_id": "1fccb4eae037cddd1d47838eec23335d30627ee193d488d4", "prediction": "Jay Van Andel", "answers": ["Jay Van Andel"], "task": "hotpotqa_e", "length": 10105}
+{"_id": "a52defffe5424e379e610889644edeb75d4276dd5b3b1be0", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 9628}
+{"_id": "d8587b6f618731d635c0e9d5cac40a523b31103e63aa5613", "prediction": "Sippin' on Some Syrup", "answers": ["Sizzurp"], "task": "hotpotqa_e", "length": 9415}
+{"_id": "c8778d92872e07b9e461349c8579ffe1301e66917f175aba", "prediction": "Yes", "answers": ["yes"], "task": "hotpotqa_e", "length": 11953}
+{"_id": "ef6033d606cd6e5c9cc6ab85b75e68cdb4cc7578a3dc573f", "prediction": "cancer", "answers": ["he turned 51, he died of cancer"], "task": "hotpotqa_e", "length": 10394}
+{"_id": "c33525e5c22773486b712b346e186dad5d5fc046031f8cb2", "prediction": "National Basketball Development League", "answers": ["National Basketball Development League"], "task": "hotpotqa_e", "length": 11842}
+{"_id": "62b502037550a59a24b8962b761645e0482a3b08ffbc7eb6", "prediction": "My Backyard", "answers": ["My Backyard"], "task": "hotpotqa_e", "length": 11727}
+{"_id": "bd4df45c5e29eb535ef926791b641aa0cfb549a4ae6c89e6", "prediction": "Brenton Thwaites", "answers": ["Brenton Thwaites"], "task": "hotpotqa_e", "length": 11580}
+{"_id": "e8d216d8aacd34ecc573741090194f0f0e5762918c9856c4", "prediction": "Humphrey the Bear", "answers": ["Figaro"], "task": "hotpotqa_e", "length": 11638}

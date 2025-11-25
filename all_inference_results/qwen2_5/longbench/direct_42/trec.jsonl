@@ -1,0 +1,200 @@
+{"_id": "bb86302b1936b14c09091143ce6e0d4d4013c4789ece0230", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 3806}
+{"_id": "be63e2d9490453d1b939ba8f850a386c7828f776df937d8c", "prediction": "Type: Individual", "answers": ["Individual"], "task": "trec", "length": 7727}
+{"_id": "1e8eb08f71a04cd4391fcaa7d98a166627d65284c467a318", "prediction": "Other entity", "answers": ["Color"], "task": "trec", "length": 4183}
+{"_id": "e8c5eb156625bc57f11c1f0c6e9ba97abb46b8672aefb2df", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 6104}
+{"_id": "9587abceff7bb3b9e0f0df6a0a040945a27b7e1eb67c64e5", "prediction": "Type: Currency", "answers": ["Currency name"], "task": "trec", "length": 5463}
+{"_id": "3e7d6a53447488a4bf1b9e9e08ea589028f3b4197d92f5a4", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 8428}
+{"_id": "53314ceb95fb9a488c88d21402e09c826d927f9c7402d0cf", "prediction": "Other location", "answers": ["Other location"], "task": "trec", "length": 2106}
+{"_id": "dc7348606b7d50383c1e69a0ea2787da8a4506114fad6f2a", "prediction": "Type: Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 4479}
+{"_id": "6c5121b0b6fd45c4c437d96cad36c46dffa122fabb7cf8eb", "prediction": "Type: Currency", "answers": ["Currency name"], "task": "trec", "length": 4841}
+{"_id": "e55a65ad534b2649ceccf41cdcba863db7774efbd1408eed", "prediction": "Type: Description of something", "answers": ["Description of something"], "task": "trec", "length": 2621}
+{"_id": "c84d7df6e4889807a25b8fb80db29c8c3d419c09387ef9e1", "prediction": "Type: Event", "answers": ["Definition of something"], "task": "trec", "length": 5425}
+{"_id": "f03199226a1925234dde134936aea510c2f331e636106781", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 5389}
+{"_id": "ed3fccd0229defe456bc01dd48d59cd62d04b49f1b1b1e0a", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 5051}
+{"_id": "4a198f563d6897cf45a1acd7af747ea3ac8e73698d1a94e7", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 7874}
+{"_id": "31277bc109b79395bbaed904e4696eceefe807fe63e6d375", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 5457}
+{"_id": "fe48b8be1c5cc6e474c04f8b96b1f2a37095e7245594b2ad", "prediction": "Type: Date", "answers": ["Date"], "task": "trec", "length": 4438}
+{"_id": "b19440bff3ae91b4ff667d2183b7e5b2b2b52df48ba53289", "prediction": "Type: Other location", "answers": ["Other entity"], "task": "trec", "length": 4713}
+{"_id": "628dffa806ccbd5b0d3ea898071a5bba1fa322937a13b3d0", "prediction": "Number of something", "answers": ["Number of something"], "task": "trec", "length": 5533}
+{"_id": "f9666d6736c07d6af8c7599e04e37f230b63e032bc2b3cc8", "prediction": "Other location", "answers": ["Other location"], "task": "trec", "length": 1524}
+{"_id": "ae345fc2a13db040fb296e9d819edf26ac19cadfcd1a1ba6", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 2329}
+{"_id": "0b6cb30081f15859876d46020fca4dd45fb6fc0f24b33a07", "prediction": "Type: Percent, fraction", "answers": ["Other number"], "task": "trec", "length": 8376}
+{"_id": "8b55d14186093e0012da5a7cd1b800d04704364bc6ce3686", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 2784}
+{"_id": "5164362f6132cb801e1d5df1c2c6356ea8bf16e9a4402a1e", "prediction": "Distance, linear measure", "answers": ["Distance, linear measure"], "task": "trec", "length": 3646}
+{"_id": "e7e40bf7a9ac82f5a438c6fc369d3208e12296907e42c62a", "prediction": "Definition of something", "answers": ["Expression abbreviated"], "task": "trec", "length": 3775}
+{"_id": "a20b33a8a018d27269d286e9ff805f8fbf1a370f080a14cd", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 1893}
+{"_id": "c49fd9c1e59b10bfe04e25ca13954f4cbf77c64beb67df64", "prediction": "Type: Organ of body", "answers": ["Reason"], "task": "trec", "length": 6709}
+{"_id": "389ce23ee7c00b34a1cdbd9b6ccec47778541a5b4b2a6861", "prediction": "Type: Definition of something", "answers": ["Description of something"], "task": "trec", "length": 7580}
+{"_id": "2515df579016f05f203679b9925e33d885985054564b2c62", "prediction": "Type: Definition of something", "answers": ["Other location"], "task": "trec", "length": 4837}
+{"_id": "e0508a69f493c99a55708cb841b5db4e350dd0cd2e3dce2d", "prediction": "Type: Geographical feature", "answers": ["Other entity"], "task": "trec", "length": 4032}
+{"_id": "40889e3cd2e32438572f29c578c29cdecb3b112ccf9952f6", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 6125}
+{"_id": "97cf3ad59a0cc47dc987e51c39efd282b16022bf1e86c30e", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 2543}
+{"_id": "2f60ccd7193f99ecd68fc106b0cb6c66ae7b60e41af9b28f", "prediction": "Diamond", "answers": ["Element and substance"], "task": "trec", "length": 6514}
+{"_id": "432bc5d5343a2d90493d1502feca910fa4f04638c165bfc5", "prediction": "Number of something", "answers": ["Temperature"], "task": "trec", "length": 2296}
+{"_id": "3d969a6b17acac98d1007630ada2d3ee04202e2543caf688", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 7327}
+{"_id": "c484b36f511ec3f88c462e36a451394a0f7674ca1146e617", "prediction": "City", "answers": ["City"], "task": "trec", "length": 1893}
+{"_id": "c929e9466c70da2f1b667b9968b34928e0f16197ca9e9c04", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 3753}
+{"_id": "69091626855bf63b2b103f3af3a47a624ccdb47285a921ca", "prediction": "Instrument", "answers": ["Musical instrument"], "task": "trec", "length": 1947}
+{"_id": "206b78b2a11b7e444a95e37dc0fd700df904094152b64a4a", "prediction": "Type: Individual", "answers": ["Individual"], "task": "trec", "length": 4815}
+{"_id": "10e30eb8abf0d20556b414e826d971873468493164027855", "prediction": "Lasting time of something", "answers": ["Lasting time of somethin"], "task": "trec", "length": 3259}
+{"_id": "7d1f909bc981db6c50db83a5c83825bb38e2d5cec1f6ebcd", "prediction": "Disease and medicine", "answers": ["Disease and medicine"], "task": "trec", "length": 5615}
+{"_id": "a12c082b70af2ce8257e73f6072f8b2b9d0d30cac6a06055", "prediction": "Type: Food", "answers": ["Definition of something"], "task": "trec", "length": 7664}
+{"_id": "dac55a9f7b6f6935b806c22e5b2a0fa53d1052fa1084aec3", "prediction": "Distance, linear measure", "answers": ["Distance, linear measure"], "task": "trec", "length": 7872}
+{"_id": "a7df71a32324720da9ed7e8b71d99605a7aa2c8c03fce970", "prediction": "Distance, linear measure", "answers": ["Distance, linear measure"], "task": "trec", "length": 6796}
+{"_id": "a94bd8caca00b64dffecfc1381aba40f95f662be291e982c", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 2807}
+{"_id": "943ab0f567be614c671b5ca026c222919c5bc65ca6bd27f7", "prediction": "Type: Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 6094}
+{"_id": "1d12eb0eac6d6119b8b60c3988dcfdf8f311fdbef2308937", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 3102}
+{"_id": "cde02966d1f0851a130f3fc25319c63c6ef8e234ed90cae0", "prediction": "Type: Word with a special property", "answers": ["Equivalent term"], "task": "trec", "length": 6978}
+{"_id": "68e634727ef0e25bc70ae29ca004adaa9b13ff53c6aa9b90", "prediction": "Type: Date", "answers": ["Date"], "task": "trec", "length": 6902}
+{"_id": "48ef3bbe793adfd2329dad96fda943f2b7278fe29ee69505", "prediction": "Type: Event", "answers": ["Group or organization of person"], "task": "trec", "length": 3176}
+{"_id": "c3ad7a6f2da7f11e98894dc996a92d822a6b75acea83aba4", "prediction": "Expression abbreviated", "answers": ["Expression abbreviated"], "task": "trec", "length": 2071}
+{"_id": "d92c1cc16f6305d942c3a2708369443c62178bad2958676a", "prediction": "Type: Date", "answers": ["Date"], "task": "trec", "length": 3276}
+{"_id": "a08d0b2b6ab805c9d3d56655ec8cdb0a2b74722cd8ddd71d", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 6512}
+{"_id": "6483b104728d33a66f53068a55c5340f9b0c8f2879a717a0", "prediction": "A group of turkeys is called a rafter.", "answers": ["Animal"], "task": "trec", "length": 4670}
+{"_id": "58103d85701e317b63815561b012e302ba0d2b49f14e84e5", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 6950}
+{"_id": "10987bf3a71ef060f7e7dae970d32c0020c6aad1ada932ca", "prediction": "Type: Currency", "answers": ["Currency name"], "task": "trec", "length": 4252}
+{"_id": "7e9b88f04d10b86992f69376308f6376f4d2b88e1c3b8b66", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 1467}
+{"_id": "cd34b068e5211051011049b00cf563b9d4993997d9c7e69f", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 4936}
+{"_id": "620e8f66c4d9c17ea9e91670bce23f19f799435178540aed", "prediction": "Number of something", "answers": ["Distance, linear measure"], "task": "trec", "length": 2868}
+{"_id": "13dfcc1e607745f0f8e6043f75f5e7c3b6774e0f7dbcb9a0", "prediction": "Other location", "answers": ["City"], "task": "trec", "length": 1435}
+{"_id": "1c07ce343f7fc3291945943efab1fe204e2fc86c018349b6", "prediction": "Type: Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 7555}
+{"_id": "f13ac67f320e6a4fe60dddf077d7d1c4090fa69ffe0e1664", "prediction": "Definition of something", "answers": ["Other entity"], "task": "trec", "length": 2168}
+{"_id": "d4791c5914a6e73526116106a7407d4627a626ef355d122f", "prediction": "Other location", "answers": ["Distance, linear measure"], "task": "trec", "length": 2075}
+{"_id": "354efe23a5c22ff89540575878c2400ee220720061c2df00", "prediction": "Lasting time of somethin", "answers": ["Lasting time of somethin"], "task": "trec", "length": 8414}
+{"_id": "53612771a03cbf45bb4e4e38231672d293438cd552407f82", "prediction": "Number of something", "answers": ["Number of something"], "task": "trec", "length": 2032}
+{"_id": "0c1076ddfb446ce669afe60a2108eecfbb2365223e8f07d2", "prediction": "Type: Invention, book and other creative piece", "answers": ["Product"], "task": "trec", "length": 8316}
+{"_id": "8e5060883a3a65416b865d26d3ba447eb93738218403f554", "prediction": "Type: Definition of something", "answers": ["Element and substance"], "task": "trec", "length": 1507}
+{"_id": "92a0d38c9117e9bf0b832ae14ee87bf169a8dbad727e0386", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 3744}
+{"_id": "0ec47c5bfef1cf9ea4d1d47116a30121de69db12519d410e", "prediction": "Color", "answers": ["Color"], "task": "trec", "length": 6150}
+{"_id": "8eb86e597aa70c66a934687954ad3504a23ce95ec9c68efe", "prediction": "Other location", "answers": ["Mountain"], "task": "trec", "length": 3089}
+{"_id": "37fc91e0069dfc5177c65cf2937227f33bffeb756d408325", "prediction": "Type: Other entity", "answers": ["Plant"], "task": "trec", "length": 4247}
+{"_id": "7aebb78c4dfb93851df88819813a91bdc31fcc524032d622", "prediction": "City", "answers": ["City"], "task": "trec", "length": 7033}
+{"_id": "e9b5249c001ca9eab599bc3ddfd315d790726d9c147ce018", "prediction": "Type: Disease and medicine", "answers": ["Definition of something"], "task": "trec", "length": 8062}
+{"_id": "64185c36020ead184262b3cd1aa28a4e7b28444c0043daef", "prediction": "Other location", "answers": ["Other location"], "task": "trec", "length": 4825}
+{"_id": "0b8e6cece544fd1a0037a0dd5e9117a3f47dfb7542803207", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 7711}
+{"_id": "56a70996016ed618c2c83f4fb36933dfca9f15f43d709208", "prediction": "Type: Country", "answers": ["Country"], "task": "trec", "length": 2348}
+{"_id": "1264141d08caf6f2f4105ce15f3c2d69d34749b96ece38de", "prediction": "Number of something", "answers": ["Distance, linear measure"], "task": "trec", "length": 2891}
+{"_id": "e611e432a55774a5572d62c26d8aa3b90a308154bcb92bcc", "prediction": "Type: Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 8251}
+{"_id": "4848c8025606efcf122bd8046265c1883a064b9bc90d26ff", "prediction": "Type: Invention, book and other creative piece", "answers": ["City"], "task": "trec", "length": 8626}
+{"_id": "c6bdd84ce95d94c9cea3db7d14d6c2fedfc0c9d735b67415", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 3311}
+{"_id": "88462d84aa70aeb3ccc737da4417cb41bade6a0503b79eee", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 5416}
+{"_id": "c32eb5c8f3c8880273a439cf5d69d544e7100960c40711c8", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 8029}
+{"_id": "a67738fc3db1df1e8403e8ca5805ab387a334d886399ad11", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 4289}
+{"_id": "5660f8f87173d67fee56f2787e551f4b8ed9970d5f46987c", "prediction": "Type: City", "answers": ["City"], "task": "trec", "length": 5916}
+{"_id": "c88bac0efe7689764268cc616fbc767033db59f9a36c1554", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 5868}
+{"_id": "2f004723bf6ff8379370d9ce35852a6694627bb15f4a3dfe", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 8430}
+{"_id": "da20414068a09f773bef4f3c60623599e79a743c4f0204e3", "prediction": "Type: Other entity", "answers": ["Other entity"], "task": "trec", "length": 3781}
+{"_id": "9866e1962b7589f4b029c249ee13345898d8126136c7531f", "prediction": "Type: Invention, book and other creative piece", "answers": ["Individual"], "task": "trec", "length": 8510}
+{"_id": "a24136eadf45ce9c6cc8d3d0e09e70b0aacd6a907019f634", "prediction": "Type: Individual", "answers": ["Individual"], "task": "trec", "length": 7933}
+{"_id": "35645649fc0f46aee04fae92a77c75c7823d5b970e241a89", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 2389}
+{"_id": "ce76993084f62d56b92777705e3158e7205fedf4d720a8fc", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 3065}
+{"_id": "560d8e7494165e41e5ef1a47ba991d3a84d63e9c9c31d8c8", "prediction": "Other location", "answers": ["Other location"], "task": "trec", "length": 5939}
+{"_id": "c9d42d796a770c574d7673d7dff5af3c99b0a72b5084117b", "prediction": "Type: Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 4307}
+{"_id": "05d13b416defd2d3f3cff926edf1e0ce7cba62a99a34effa", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 8077}
+{"_id": "a057710d15bc87687798011aa9051bdbd1664b8b1936a524", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 6090}
+{"_id": "ac63cf847f670d41f854b5561b2c41d63f6d497ae6efe15b", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 7859}
+{"_id": "a57a8f12682411b108e4ebb96590a46c1acdb0f7622f8459", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 8140}
+{"_id": "a748374c01086b106ed89a37e09be54162695db65d909b31", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 7081}
+{"_id": "e5d161f8e8db85864d32796535db57b99a3beaedf3716af1", "prediction": "Description of something", "answers": ["Mountain"], "task": "trec", "length": 8431}
+{"_id": "7011be7047eaaf45afdf0b6bef4622c058d9aec9fe0b8d2c", "prediction": "Type: Manner of an action", "answers": ["Techniques and method"], "task": "trec", "length": 8265}
+{"_id": "c0495d43f7080033aae75ceba1655c35742bbdf36cf74186", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 4224}
+{"_id": "d21366d5b4ba5ca8c0c06e934bb093375512de3952fbef4f", "prediction": "Type: Individual", "answers": ["Individual"], "task": "trec", "length": 8430}
+{"_id": "569808d9d65b3e6d8d7ea00c4e77009acf10a517466532dd", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 8016}
+{"_id": "18a99852ee4f2bdcc14df2a8bf88e75893ee8ccf106449b8", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 1543}
+{"_id": "ce4d2107e842c9baf2fcf0e566d57f843e632e2c98240eb3", "prediction": "Definition of something", "answers": ["Disease and medicine"], "task": "trec", "length": 7133}
+{"_id": "69dc977e188f73a5006e3e40169f49d0970ccac9bb014727", "prediction": "City", "answers": ["City"], "task": "trec", "length": 3012}
+{"_id": "e40d4b02326a848a9fca110c36522853da4888d73be44a49", "prediction": "Type: Individual", "answers": ["Individual"], "task": "trec", "length": 6644}
+{"_id": "03b05f488f77aafcceaf28e5338051de95fa9d66d2539322", "prediction": "Type: Institution", "answers": ["Group or organization of person"], "task": "trec", "length": 1794}
+{"_id": "5c743e30c49cecf433278bc2849b6347c74eb20bde08f468", "prediction": "Expression abbreviated", "answers": ["Expression abbreviated"], "task": "trec", "length": 3100}
+{"_id": "eb0920252b7b3ccb7efa83fbb923c5a246702cbca576a134", "prediction": "Definition of something", "answers": ["Equivalent term"], "task": "trec", "length": 3493}
+{"_id": "7fab26eda8723e59049d81b51b96f5efd28dd042836bd01e", "prediction": "City", "answers": ["City"], "task": "trec", "length": 2750}
+{"_id": "865a91662df3b7ea2395045eefe5c355f76502b8654ca95d", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 7874}
+{"_id": "8fa68009baf3bf4fa0023bdafe07167ac6ea5121fa1c9f29", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 5312}
+{"_id": "8a77b0de4617b701c0807158f2173d7025cdc5d019e22232", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 2610}
+{"_id": "88c157a27c035f7c76e5ca566af652e618102b1673abba69", "prediction": "Other number", "answers": ["Distance, linear measure"], "task": "trec", "length": 5862}
+{"_id": "bf74889c7fb521a442a03f2f1e9a763ae8b11af7654bc87b", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 4438}
+{"_id": "3f7c51c87c672badc50c3b1ce85fff1f4688cf7a4f2916d7", "prediction": "Type: Other number", "answers": ["Percent, fraction"], "task": "trec", "length": 8068}
+{"_id": "e81151e43c230b0b037aa9e94739d19d36851fc6d82dac94", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 8714}
+{"_id": "4d1366f1fced7b09378075ac467aa21626822e7fd875aad7", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 4643}
+{"_id": "67da3217593b0305047b9f3103ebe7fb507112a67d43a27a", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 7131}
+{"_id": "37d3ef43380e769500db704720bacd131dc6bd09e5f040b3", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 1911}
+{"_id": "6075661e710f419b30971816ec6e975636d9fe33edf91cbc", "prediction": "Individual", "answers": ["Animal"], "task": "trec", "length": 2129}
+{"_id": "9e493dfdeb1f43b0bf586b21f8f73e1080c0453c32228223", "prediction": "Type: Other number", "answers": ["Other number"], "task": "trec", "length": 5450}
+{"_id": "5cc5f5c961f7b577dfaa8358352b7c546639540628871a2a", "prediction": "Volume", "answers": ["Definition of something"], "task": "trec", "length": 8500}
+{"_id": "87c525d2fea468800172db577752e30afb5ac281ac15a4fb", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 6285}
+{"_id": "bb85a9ba81c5b2b43f42e74124bbdab7c367d48b11ccd4f4", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 3327}
+{"_id": "af885f2dd88c3d1ef0278e145a56e0142e8dffa98da1725e", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 1889}
+{"_id": "729b220cc22edaa8183925bcf721e5cb9db1c61757a3db65", "prediction": "Type: Equivalent term", "answers": ["Individual"], "task": "trec", "length": 6862}
+{"_id": "ac4398fc1a1b445d618d926fd6a3ef39a9fea060924a4eac", "prediction": "Element and substance", "answers": ["Weight"], "task": "trec", "length": 1988}
+{"_id": "c180f344bd8bd450734da05ba9257f537c87f6685bee95a0", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 7107}
+{"_id": "1e8f992d97411a7f0a833383900a0bf3ab7e8adeade4ff83", "prediction": "Glass", "answers": ["Element and substance"], "task": "trec", "length": 5401}
+{"_id": "eb260c330bdf871051d27c5e3caa4a7818cd13c10ccdaab0", "prediction": "Type: Price", "answers": ["Other entity"], "task": "trec", "length": 7629}
+{"_id": "246234b8bd50080971f652b2b0e5735f3762aa514eb2e032", "prediction": "Country", "answers": ["Country"], "task": "trec", "length": 2427}
+{"_id": "fd0b5fd5f649813292b08b654fce776e997b34c82f845c65", "prediction": "City", "answers": ["City"], "task": "trec", "length": 3220}
+{"_id": "d33c805c80d525273ff55f3c2406efc9e81552492ce30f1f", "prediction": "Type: Other entity", "answers": ["Group or organization of person"], "task": "trec", "length": 2796}
+{"_id": "d81973d8c9154fb49d94dad8fce08c940cb9697c531c9030", "prediction": "Type: Date", "answers": ["Date"], "task": "trec", "length": 5946}
+{"_id": "523cf34b2fc652ae207acd377a178f1bc791acf15306551b", "prediction": "Type: Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 6674}
+{"_id": "4a2efc57a3257f4b4e76ec3ed65bfb12cfe67f97e686ea94", "prediction": "Type: Description of something", "answers": ["Reason"], "task": "trec", "length": 7481}
+{"_id": "a976a1c02e1b341e4fafdc3b5bc862d1a812cccd2cd484ad", "prediction": "Type: Individual", "answers": ["Individual"], "task": "trec", "length": 8206}
+{"_id": "2346e2f34ef8d8ab90f6890d22e0d317f7cf5e5c54c70ddc", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 5456}
+{"_id": "74a1e748b82a9d4c53c859f073572c3a80c36592a5f55389", "prediction": "Price", "answers": ["Price"], "task": "trec", "length": 6487}
+{"_id": "fbbb9bbd508719779d6a003127b925ad1c457ea19a753f1d", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 6446}
+{"_id": "6935ef01f250692f0aefaddbee53881e2a78a1b33b5d38d8", "prediction": "Number of something", "answers": ["Lasting time of somethin"], "task": "trec", "length": 7969}
+{"_id": "d438bf5816a84739a076deedabbf6df043b4879582eeda96", "prediction": "Color", "answers": ["Color"], "task": "trec", "length": 4471}
+{"_id": "85968a31b5fdd71e6d45e7124e424847ba5d1b32c1f1ce63", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 7704}
+{"_id": "9a89e12f4c64eda441932465fd598c303398ef4db379d244", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 2058}
+{"_id": "60b0d4baa34981dddb033443dc66304e6566236b2f0dbc55", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 5841}
+{"_id": "0306aeb74c74c415bc065c5061623347e9bdf73e7950b0c6", "prediction": "Group or organization of person", "answers": ["Group or organization of person"], "task": "trec", "length": 4670}
+{"_id": "7f733b8563f3a6aac3fe940f6a201bab76ee6b216aaaf4ba", "prediction": "Pips", "answers": ["Equivalent term"], "task": "trec", "length": 7382}
+{"_id": "fe4e5a937c7dc6f854351c43f5cfab0b9d27c14cc219fd22", "prediction": "City", "answers": ["Other location"], "task": "trec", "length": 6307}
+{"_id": "3b20c1d16810a4a74fbb7c8940110cc55564b79e78b1f370", "prediction": "State", "answers": ["State"], "task": "trec", "length": 5793}
+{"_id": "5f9d42b8f405e3244f17601b8914540d55013a8f6e8fbbbc", "prediction": "Animal", "answers": ["Animal"], "task": "trec", "length": 6788}
+{"_id": "bbfcb118b6a0beff1ab6bcf1660b429ff31b7817aac6f745", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 7466}
+{"_id": "93407117c5c49c8989c5560893358677df6ea48f66178ab1", "prediction": "Individual", "answers": ["Description of a person"], "task": "trec", "length": 2324}
+{"_id": "85189a86019c80861473ae5fec4a2a2ac6505770fcfb4326", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 2892}
+{"_id": "9b1ca10af60da00beb5467500cf4c2b2c385c81c16593650", "prediction": "Type: Other location", "answers": ["Other location"], "task": "trec", "length": 4544}
+{"_id": "6ed29e661cf0080174f978aaf9b9932b1d63447b7bf38cf7", "prediction": "Number of something", "answers": ["Other number"], "task": "trec", "length": 4307}
+{"_id": "39075a5e290556a5402205167608a2536ecf9ec552e98e0d", "prediction": "Type: Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 8039}
+{"_id": "a032ffad12a8da2b10fa70b628ddefdd6dc40c57c56eba04", "prediction": "City", "answers": ["City"], "task": "trec", "length": 7482}
+{"_id": "3330462260cd3227287ec4440d37253eefffa8e6654f2229", "prediction": "Size, weight and mass", "answers": ["Weight"], "task": "trec", "length": 1717}
+{"_id": "f94477ea9ecb0fe90ebb6b303ca57c09345c8c55b44cf148", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 4978}
+{"_id": "dcfa370cf40c062f62efab6a3082d37eac3a366612927cb8", "prediction": "Type: Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 6764}
+{"_id": "3eefbe04d3be7b7a6a72227ba6575ba1aa39449ff3b14ecf", "prediction": "Disease and medicine", "answers": ["Reason"], "task": "trec", "length": 7174}
+{"_id": "e05426365861e1d2e2a6b56027ca3af108e4944390b0d7db", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 3161}
+{"_id": "b5dbf95d4914cfa17d7f34d29feb0b7c577e77ac764422ac", "prediction": "Type: Individual", "answers": ["Individual"], "task": "trec", "length": 5606}
+{"_id": "0f9a8aca3f7f23f92294d2522a311e98119fb01ed311294d", "prediction": "Type: Individual", "answers": ["Individual"], "task": "trec", "length": 3708}
+{"_id": "9f68ffea3bd44bde6c8c923dcfee4006311af42e9107c5be", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 6780}
+{"_id": "ec28c83d86786bc03d79c6f25e301f85f0fdba6018f20a7a", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 4458}
+{"_id": "2ad3442ea8cc11e6ff1aff960d9f94702c1d2f74e56276ed", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 6642}
+{"_id": "1b82d9c3f648f0300c1e30f134e5e2e56a749c295ec94ed7", "prediction": "Distance, linear measure", "answers": ["Distance, linear measure"], "task": "trec", "length": 5303}
+{"_id": "6f6b792e2a35efdfea1cd445e39fa6d9f5554ad7be8d05b1", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 5161}
+{"_id": "7e22d6a219c6aae8a246db689dd2479c7cf500bff9452115", "prediction": "Type: Individual", "answers": ["Individual"], "task": "trec", "length": 4806}
+{"_id": "6c50262227611d4c4309566426cc5e31a408b68b588e9dcd", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 6382}
+{"_id": "ea29ea4fd2b35bd7dc2d53ac018bfe8385058042214ce5cf", "prediction": "Type: Color", "answers": ["Color"], "task": "trec", "length": 7308}
+{"_id": "258eac8ce0c51298894895f7e29dafecfbf9f3064de5fa3c", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 3034}
+{"_id": "a9837859ef41605be174b64c0c25f85957d7822e8bcd528c", "prediction": "Currency name", "answers": ["Currency name"], "task": "trec", "length": 7447}
+{"_id": "8f825483b0c8af273f5a50a479badf47b006fa59610fdcbf", "prediction": "Material", "answers": ["Element and substance"], "task": "trec", "length": 4766}
+{"_id": "9e628b5cbbd4b9cf009d9bc2f01fb8d0648b115dfde912a5", "prediction": "Other location", "answers": ["Other location"], "task": "trec", "length": 2818}
+{"_id": "f76354a020721f6b01013a7a6de69ac67d8252e39561572d", "prediction": "Type: Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 7338}
+{"_id": "4fc23d9ec2244fa06173982e689adaaf5e3b2178d559ad28", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 1694}
+{"_id": "b03fe43e3f84615e5d4cbb554960ac46cbec8360c126575b", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 2647}
+{"_id": "c4322f6a42e09bc70c2ef215a9fe275ae0049307e6411eb9", "prediction": "Type: Individual", "answers": ["Individual"], "task": "trec", "length": 4590}
+{"_id": "5fb2eac7d91e559f656dc943b82c1b100b9bd954c34d61b8", "prediction": "Frequency", "answers": ["Other number"], "task": "trec", "length": 2897}
+{"_id": "f5cdfc2171a67449110d1bd5696cfee5a1e526e6943429e1", "prediction": "Other location", "answers": ["Other location"], "task": "trec", "length": 8084}
+{"_id": "4d86285558400a759ac5b2c1e006b7307f1083b30c4a58f8", "prediction": "Language", "answers": ["Language"], "task": "trec", "length": 7901}
+{"_id": "98c2df915d12b7f92dbeee631e8a1d684afab44b599bd014", "prediction": "Other location", "answers": ["Other location"], "task": "trec", "length": 5198}
+{"_id": "244e30fb0cfda33a9412059c74b88bc3e336ede2b4b6449a", "prediction": "Individual", "answers": ["Individual"], "task": "trec", "length": 4157}
+{"_id": "4668c26ce817883731ac37280f732de85c72a65ce1a1e1d3", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 5797}
+{"_id": "4a2ba24a64fd970ca7d194dcd4b86c1519a4682c152cecbf", "prediction": "Other location", "answers": ["Other location"], "task": "trec", "length": 3942}
+{"_id": "09189157c383685493b6b9748127dfacdae341732c15e2ab", "prediction": "Sport", "answers": ["Sport"], "task": "trec", "length": 2428}
+{"_id": "745bf59e117d09eb87760787ba1a77c6d9525d100af11a97", "prediction": "Type: Expression abbreviated", "answers": ["Expression abbreviated"], "task": "trec", "length": 5190}
+{"_id": "f533cb0d1f6836afdbd9fa59c16ba02dee48b9dce8f9afd7", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 8556}
+{"_id": "218479b7f5e7c0262980327140cfff36f84b53b2cb244cdd", "prediction": "Date", "answers": ["Date"], "task": "trec", "length": 4569}
+{"_id": "00931a85ac36a559882280d7f885d6aa96737de71e862d60", "prediction": "Number of something", "answers": ["Distance, linear measure"], "task": "trec", "length": 6932}
+{"_id": "70c8efe58eec57a64f3840a02a96a15851e8a2d6dcda94d4", "prediction": "Number of something", "answers": ["Number of something"], "task": "trec", "length": 7855}
+{"_id": "973d77aa7c0385e180ed9d8b746e097d982dcf4bceed0f40", "prediction": "Type: Animal", "answers": ["Equivalent term"], "task": "trec", "length": 4876}
+{"_id": "ca78e748275159deae808881ba6d1a3280f63c204a0555ed", "prediction": "Type: Date", "answers": ["Date"], "task": "trec", "length": 3997}
+{"_id": "844d4f0073817254ceb0f26f8226bb10a0fa48d10b56d6b7", "prediction": "Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 6770}
+{"_id": "9607aa495ee45b517cab4b7663b50e2b5d2e6c3b103a7e83", "prediction": "State", "answers": ["State"], "task": "trec", "length": 2175}
+{"_id": "d282453f8c0d073dbaec6ed9d7feb7a244d73c2c54e4c9fb", "prediction": "Type: Definition of something", "answers": ["Definition of something"], "task": "trec", "length": 4685}
+{"_id": "4263e5dc07137c9c109cbc1842bd10e79833bb673769757e", "prediction": "Chemical compound", "answers": ["Food"], "task": "trec", "length": 3329}
