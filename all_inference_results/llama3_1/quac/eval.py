@@ -145,7 +145,7 @@ def eval_fn(val_results, model_results, min_f1=0.4, verbose=False):
         for par in p['paragraphs']:
             did = par['id']
             qa_list = par['qas']
-            for qa in qa_list[:3]:
+            for qa in qa_list:
                 q_idx = qa['id']
                 val_spans = [anss['text'] for anss in qa['answers']]
                 val_spans = handle_cannot(val_spans)
