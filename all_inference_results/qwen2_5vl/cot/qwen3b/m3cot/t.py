@@ -7,13 +7,9 @@ import json
 import re
 from typing import Dict, Tuple, Optional
 from collections import defaultdict
-
-# <--- 修改开始 ---
-# 引入 numpy 用于计算均值和标准差
 import numpy as np
 
 
-# <--- 修改结束 ---
 
 
 def calculate_f1_macro(y_true, y_pred):

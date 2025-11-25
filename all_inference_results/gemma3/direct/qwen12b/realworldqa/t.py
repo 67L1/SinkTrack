@@ -1,31 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-用法:
-    python calc_acc.py
-    (输入文件已在代码中硬编码)
-"""
+
 
 import argparse
 import json
 import re
 from typing import Dict, Tuple, Optional
 from collections import defaultdict
-
-# <--- 修改开始 ---
-# 引入 numpy 用于计算均值和标准差
 import numpy as np
 
 
-# <--- 修改结束 ---
-
-# 全局变量 y_true 和 y_pred 已被移入 main 函数内部，以避免在处理多个文件时数据累积。
 
 def calculate_f1_macro(y_true, y_pred):
-    """
-    计算宏平均F1分数 (Macro F1-Score)。
-    """
     labels = sorted(set(y_true))
     stats = defaultdict(lambda: {"tp": 0, "fp": 0, "fn": 0})
 
@@ -63,7 +50,6 @@ def calculate_f1_macro(y_true, y_pred):
         return 0.0
 
     macro_f1 = sum(f1_scores) / len(f1_scores)
-    # 打印单个文件的 F1 分数
     print(f"F1 (Macro): {macro_f1:.6f}")
     return macro_f1
 
@@ -169,18 +155,14 @@ def compare_pred_answer(pred_text: str, ans_text: str) -> bool:
     return False
 
 
-# <--- 修改开始 ---
-# 将原 main 函数重命名为 process_single_file，并让它返回 acc 和 f1
 def process_single_file(input_file: str) -> Tuple[float, float]:
-    """处理单个文件并返回其ACC和F1分数"""
-    # 将 y_true 和 y_pred 移到函数内部，确保每次调用都重新初始化
     y_true = []
     y_pred = []
 
     total = 0
     correct = 0
     errors = []
-    show_errors = 0  # 如果需要显示错误，可以修改这个值
+    show_errors = 0
 
     with open(input_file, "r", encoding="utf-8") as f:
         for ln, line in enumerate(f, start=1):
@@ -193,9 +175,9 @@ def process_single_file(input_file: str) -> Tuple[float, float]:
                 print(f"Warning: Skipping malformed JSON on line {ln} in {input_file}")
                 continue
 
-            if total == 765:
-                break
             total += 1
+            if total == 1400:
+                break
             ans = str(obj.get("answer", "")).strip()
             pred_raw = str(obj.get("pred", "")).strip()
             question = str(obj.get("question", "")).strip()
@@ -253,28 +235,21 @@ def process_single_file(input_file: str) -> Tuple[float, float]:
     print(f"Correct: {correct}")
     print(f"ACC: {acc:.6f}")
 
-    # 调用F1计算函数并获取结果
     f1_macro = calculate_f1_macro(y_true, y_pred)
 
-    # 返回计算出的 ACC 和 F1 分数
     return acc, f1_macro
 
 
 if __name__ == "__main__":
-    # 定义要处理的文件列表
     input_files = ['res_323.json', 'res_500.json', 'res_900.json']
 
-    # 用于存储每个文件的结果
     all_accuracies = []
     all_f1_scores = []
 
-    # 循环处理每个文件
     for file_path in input_files:
         try:
             print(f"\n--- Processing file: {file_path} ---")
-            # 调用处理函数，获取ACC和F1
             acc, f1 = process_single_file(file_path)
-            # 将结果添加到列表中
             all_accuracies.append(acc)
             all_f1_scores.append(f1)
         except FileNotFoundError:
@@ -282,16 +257,13 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"An unexpected error occurred while processing {file_path}: {e}")
 
-    # 检查是否成功处理了任何文件
     if all_accuracies and all_f1_scores:
-        # 计算均值和标准差
         mean_acc = np.mean(all_accuracies)
         std_acc = np.std(all_accuracies)
 
         mean_f1 = np.mean(all_f1_scores)
         std_f1 = np.std(all_f1_scores)
 
-        # 打印最终的汇总结果
         print("\n" + "=" * 30)
         print("--- Overall Results ---")
         print("=" * 30)
@@ -301,4 +273,3 @@ if __name__ == "__main__":
         print("=" * 30)
     else:
         print("\nNo files were processed successfully. Cannot calculate overall results.")
-# <--- 修改结束 ---
