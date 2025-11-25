@@ -119,10 +119,10 @@ To evaluate SinkTrack results for a specific model on a specific dataset (across
 1.  Navigate to the specific results folder.
 2.  Run `python t.py`.
 
-**Example:** Evaluating **Gemma3-12B** using SinkTrack on the **MMStar** dataset.
+**Example:** Evaluating **Gemma3-4B** using SinkTrack on the **MMStar** dataset.
 
 ```bash
-cd all_inference_results/gemma3/sinktrack/12b/mmstar
+cd all_inference_results/gemma3/sinktrack/4b/mmstar
 python t.py
 ```
 *Output:* This will display the results for each seed file, as well as the mean and variance across the three runs.
