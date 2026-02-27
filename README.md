@@ -1,5 +1,7 @@
 # SinkTrack: Attention Sink based Context Anchoring for Large Language Models
 
+The official implementation of "[SinkTrack: Attention Sink based Context Anchoring for Large Language Models](https://openreview.net/forum?id=Gg1aPETCL6)" (ICLR 2026).
+
 ## Abstract
 Large language models (LLMs) suffer from hallucination and context forgetting. These problems are caused by attention drift, where LLMs’ focus shifts towards newly generated tokens and away from the initial input context. To address this, we make use of a related, intrinsic characteristic of LLMs: attention sink – the tendency to consistently allocate high attention to the very first token (i.e., ⟨BOS⟩) of a sequence. Concretely, we propose an advanced context anchoring method, SINKTRACK, which treats ⟨BOS⟩ as an information anchor and injects key contextual features (such as those derived from the input image or instruction) into its representation. As such, LLM remains anchored to the initial input context throughout the entire generation process. SINKTRACK is training-free, plug-and-play, and introduces negligible inference overhead. Experiments demonstrate that SINKTRACK mitigates hallucination and context forgetting across both textual (e.g., +18.9% on QuAC with Llama3.1-8B-Instruct) and multi-modal (e.g., +23.0% on M3CoT with Qwen2.5-VL-7B-Instruct) tasks. Its consistent gains across different architectures and scales underscore the robustness and generalizability. We also analyze its underlying working mechanism from the perspective of information delivery.
 
