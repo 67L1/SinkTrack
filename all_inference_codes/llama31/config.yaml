@@ -1,0 +1,33 @@
+model:
+  model_path : "all_inference_codes/models/Llama-3.1-8B-Instruct"
+  torch_dtype: "bfloat16"
+  device_map : "auto"
+
+
+sinktrack:
+  injection_layer_idx: 4
+
+
+data:
+  val_data_path: "all_inference_results/llama3_1/quac/val_v0.2.json"
+
+
+output:
+  base_dir             : "all_inference_results/llama3_1/quac"
+  cot_output_path      : "cot.jsonl"
+  direct_output_path   : "direct.jsonl"
+  sinktrack_output_path: "sinktrack.jsonl"
+
+
+generation:
+  max_new_tokens: 2048
+  do_sample     : false
+
+
+experiment:
+  seeds: [323, 500, 900]
+
+
+evaluation:
+  min_f1 : 0.4
+  verbose: false

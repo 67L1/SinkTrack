@@ -3,7 +3,6 @@ from typing import Callable, Optional, Union, Dict, Any
 import torch
 from torch import nn
 import torch.nn.functional as F
-import numpy as np
 from transformers.models.llama.modeling_llama import (
     LlamaAttention,
     LlamaDecoderLayer,
@@ -35,7 +34,6 @@ from transformers.utils.generic import check_model_inputs
 logger = logging.get_logger(__name__)
 
 
-
 class LlamaInjectionAttention(LlamaAttention):
     def forward(
             self,
@@ -54,15 +52,14 @@ class LlamaInjectionAttention(LlamaAttention):
 
         is_injection_step = (
                 injection_layer_idx is not None
-                and self.layer_idx in np.arange(1, 32, 4)
+                and (self.layer_idx % injection_layer_idx == 0)
                 and self.layer_idx != 0
                 and global_prompt_embedding is not None
-                and q_len > 1  
+                and q_len > 1
         )
 
 
         if is_injection_step:
-            logger.info(f"Injecting global prompt embedding at layer {self.layer_idx}...")
             query_states = self.q_proj(hidden_states)
             key_states_text = self.k_proj(hidden_states)
             value_states_text = self.v_proj(hidden_states)
@@ -74,12 +71,10 @@ class LlamaInjectionAttention(LlamaAttention):
 
             query_states = query_states.view(bsz, q_len, -1, self.head_dim).transpose(1, 2)
             key_states_text = key_states_text.view(bsz, q_len, -1, self.head_dim).transpose(1, 2)
-            value_states_text = value_states_text.view(bsz, q_len, -1, self.head_dim).transpose(1,
-                                                                                                                      2)
+            value_states_text = value_states_text.view(bsz, q_len, -1, self.head_dim).transpose(1, 2)
 
-            key_states_prompt = key_states_prompt.view(bsz, 1, -1, self.head_dim).transpose(1, 2)
-            value_states_prompt = value_states_prompt.view(bsz, 1, -1, self.head_dim).transpose(1,
-                                                                                                                      2)
+            key_states_prompt = key_states_prompt.view(bsz, q_len, -1, self.head_dim).transpose(1, 2)
+            value_states_prompt = value_states_prompt.view(bsz, q_len, -1, self.head_dim).transpose(1, 2)
 
             cos, sin = position_embeddings
             query_states, key_states_text = apply_rotary_pos_emb(query_states, key_states_text, cos, sin)
@@ -93,6 +88,7 @@ class LlamaInjectionAttention(LlamaAttention):
 
             key_prompt_repeated = repeat_kv(key_states_prompt, self.num_key_value_groups)
             value_prompt_repeated = repeat_kv(value_states_prompt, self.num_key_value_groups)
+
 
             attn_output_first = F.scaled_dot_product_attention(
                 query_first,
@@ -120,7 +116,6 @@ class LlamaInjectionAttention(LlamaAttention):
 
             attn_output = torch.cat([attn_output_first, attn_output_others], dim=2)
             attn_weights = None
-            print("injecting...")
             attn_output = attn_output.transpose(1, 2).contiguous()
             attn_output = attn_output.reshape(bsz, q_len, self.config.hidden_size)
             attn_output = self.o_proj(attn_output)
@@ -196,7 +191,6 @@ class LlamaInjectionDecoderLayer(LlamaDecoderLayer):
         )
         hidden_states = residual + hidden_states
 
-        # Fully Connected
         residual = hidden_states
         hidden_states = self.post_attention_layernorm(hidden_states)
         hidden_states = self.mlp(hidden_states)
@@ -273,7 +267,6 @@ class LlamaModelWithPromptInjection(LlamaModel):
                     hidden_states.shape[1] > 1 and
                     (idx + 1) % injection_layer_idx == 0 and
                     idx != (self.config.num_hidden_layers - 1)):
-                logger.info(f"Updating global prompt embedding after layer {idx}")
                 global_prompt_embedding = hidden_states
 
         hidden_states = self.norm(hidden_states)
@@ -290,7 +283,6 @@ class LlamaForCausalLMWithPromptInjection(LlamaForCausalLM):
         self.vocab_size = config.vocab_size
         self.lm_head = nn.Linear(config.hidden_size, config.vocab_size, bias=False)
 
-        # Initialize weights and apply final processing
         self.post_init()
 
     def prepare_inputs_for_generation(
@@ -307,7 +299,6 @@ class LlamaForCausalLMWithPromptInjection(LlamaForCausalLM):
             **kwargs
         )
         model_inputs["injection_layer_idx"] = injection_layer_idx
-
         return model_inputs
 
     @can_return_tuple
@@ -329,6 +320,7 @@ class LlamaForCausalLMWithPromptInjection(LlamaForCausalLM):
 
         if inputs_embeds is None and input_ids is not None:
             inputs_embeds = self.model.embed_tokens(input_ids)
+
         global_prompt_embedding = None
         if injection_layer_idx is not None and inputs_embeds.shape[1] > 1 and attention_mask is not None:
             prompt_embeddings_list = []
@@ -338,10 +330,7 @@ class LlamaForCausalLMWithPromptInjection(LlamaForCausalLM):
                 if valid_embeds.numel() > 0:
                     prompt_embeddings_list.append(valid_embeds)
                 else:
-                    print("================")
-                    print("==== ERROR =====")
-                    print("================")
-
+                    logger.warning("Empty prompt for sample %d; using zero embedding.", i)
                     prompt_embeddings_list.append(
                         torch.zeros(self.config.hidden_size, device=inputs_embeds.device, dtype=inputs_embeds.dtype))
 
