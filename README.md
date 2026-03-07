@@ -89,7 +89,59 @@ This will output the evaluation metrics for Direct, CoT, and SinkTrack methods.
 
 ---
 
-## 2. Customizing Models and Datasets
+## 2. Reproducing Results: Llama 3.1 on QuAC
+
+**Note:** All operations in this section should be performed from the `all_inference_codes/llama31` directory (e.g. run `cd all_inference_codes/llama31` from the repo root). Paths in `config.yaml` are relative to the repo root and work both locally and on Google Colab.
+
+This section guides you through the complete pipeline for running Llama 3.1-8B-Instruct on the QuAC dataset, including data preparation, inference, and evaluation.
+
+### Step 1: Prepare Validation Data
+
+*   **Requirement:** The validation JSON must follow the QuAC format (e.g. `val_v0.2.json` with a `data` key containing articles and paragraphs).
+*   **Placement:** By default the scripts expect the file at `all_inference_results/llama3_1/quac/val_v0.2.json` (see `data.val_data_path` in `config.yaml`). Place your file there or update the path in `config.yaml`.
+
+### Step 2: Download Model
+
+Download the **Llama-3.1-8B-Instruct** model.
+*   **URL:** https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct
+*   **Destination:** Place the model files into the `all_inference_codes/models` directory (or the path set in `config.yaml` → `model.model_path`).
+
+### Step 3: Run Inference
+
+**Important:** Run the commands below from the `all_inference_codes/llama31` directory.
+
+Navigate to the `llama31` directory and run the inference scripts for different methods (Direct, CoT, and SinkTrack).
+
+```bash
+cd all_inference_codes/llama31   # from repo root; omit if already there
+
+# Run Direct Inference
+python direct.py
+
+# Run Chain-of-Thought (CoT) Inference
+python cot.py
+
+# Run SinkTrack Inference
+python run.py
+```
+
+The results are saved in a single directory:
+*   **Output directory:** `all_inference_results/llama3_1/quac/`
+*   **Files:** `direct_323.jsonl`, `direct_500.jsonl`, `direct_900.jsonl`, and similarly `cot_*.jsonl` and `sinktrack_*.jsonl` for each method.
+
+### Step 4: Evaluate Results
+
+To evaluate the performance of the generated results, run the evaluation script:
+
+```bash
+python new_scorer.py
+```
+
+This will output the evaluation metrics (F1, HEQ, DHEQ, etc.) for the selected baseline across seeds. Use `--baseline direct`, `--baseline cot`, or the default SinkTrack; see `python new_scorer.py --help` for more options.
+
+---
+
+## 3. Customizing Models and Datasets
 
 This section explains how to apply this framework to different datasets or models.
 
@@ -111,7 +163,7 @@ To use a different model:
 
 ---
 
-## 3. Evaluating Pre-Uploaded Inference Results
+## 4. Evaluating Pre-Uploaded Inference Results
 
 If you wish to assess the performance of the inference results we have already uploaded, follow the instructions below based on the modality.
 
