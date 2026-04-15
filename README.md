@@ -197,10 +197,25 @@ python eval.py
 *Output:* This will display the evaluation metrics for all methods located in that directory.
 
 ## Acknowledgment
-Our implementation is mainly based on the following codebases. We gratefully thank the authors for their wonderful works.
-- Hugging Face Transformers
-- Qwen2.5-VL, Llama 3.1, Gemma3 official implementations
-- M3CoT, QuAC, POPE, MMStar, SQuAD2.0, ScienceQA
+
+This project builds upon several excellent open-source works. We sincerely thank the authors for their contributions:
+
+### Frameworks
+- [Hugging Face Transformers](https://github.com/huggingface/transformers)
+
+### Model Implementations
+- [Qwen2.5 / Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5)
+- [Llama 3.1](https://github.com/meta-llama/llama-models)
+- [Gemma](https://github.com/google-deepmind/gemma)
+- [MiniCPM](https://github.com/OpenBMB/MiniCPM)
+
+### Datasets
+- [M3CoT](https://huggingface.co/datasets/LightChen2333/M3CoT)
+- [QuAC](https://github.com/allenai/quac)
+- [POPE](https://github.com/AoiDragon/POPE)
+- [MMStar](https://github.com/StarCYLi/MMStar)
+- [SQuAD2.0](https://github.com/rajpurkar/SQuAD-explorer)
+- [ScienceQA](https://github.com/lupantech/ScienceQA)
 
 ## Citation
 If you find this work useful in your research, please star our repository and consider citing:
