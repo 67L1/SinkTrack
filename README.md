@@ -91,14 +91,15 @@ This will output the evaluation metrics for Direct, CoT, and SinkTrack methods.
 
 ## 2. Reproducing Results: Llama 3.1 on QuAC
 
-**Note:** All operations in this section should be performed from the `all_inference_codes/llama31` directory (e.g. run `cd all_inference_codes/llama31` from the repo root). Paths in `config.yaml` are relative to the repo root and work both locally and on Google Colab.
+**Note:** All operations in this section should be performed within the `all_inference_codes/llama31` directory unless otherwise specified.
 
 This section guides you through the complete pipeline for running Llama 3.1-8B-Instruct on the QuAC dataset, including data preparation, inference, and evaluation.
 
 ### Step 1: Prepare Validation Data
 
-*   **Requirement:** The validation JSON must follow the QuAC format (e.g. `val_v0.2.json` with a `data` key containing articles and paragraphs).
-*   **Placement:** By default the scripts expect the file at `all_inference_results/llama3_1/quac/val_v0.2.json` (see `data.val_data_path` in `config.yaml`). Place your file there or update the path in `config.yaml`.
+*   **Requirement:** The validation JSON must follow the QuAC format (e.g., `val_v0.2.json` with a `data` key).
+*   **Action:** Place the file at `all_inference_codes/llama31/quac/val_v0.2.json` (or update `data.val_data_path` in `config.yaml`).
+*   **Optional:** For default evaluation settings, you may also copy it to `all_inference_codes/datasets/val_v0.2.json`.
 
 ### Step 2: Download Model
 
@@ -126,7 +127,7 @@ python run.py
 ```
 
 The results are saved in a single directory:
-*   **Output directory:** `all_inference_results/llama3_1/quac/`
+*   **Output directory:** `all_inference_codes/llama31/quac/`
 *   **Files:** `direct_323.jsonl`, `direct_500.jsonl`, `direct_900.jsonl`, and similarly `cot_*.jsonl` and `sinktrack_*.jsonl` for each method.
 
 ### Step 4: Evaluate Results
@@ -194,3 +195,37 @@ cd all_inference_results/llama3_1/quac
 python eval.py
 ```
 *Output:* This will display the evaluation metrics for all methods located in that directory.
+
+## Acknowledgment
+Our implementation is mainly based on the following outstanding codebases and open-source projects. We sincerely thank the authors for their remarkable contributions to the community:
+- [Hugging Face Transformers](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fhuggingface%2Ftransformers&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [Qwen2.5 / Qwen2.5-VL](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2FQwenLM%2FQwen2.5&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [Llama 3.1](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama-models&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [Gemma3](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fgoogle-deepmind%2Fgemma&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [MiniCPM3](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [M3CoT](sslocal://flow/file_open?url=https%3A%2F%2Fhuggingface.co%2Fdatasets%2FLightChen2333%2FM3CoT&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [QuAC](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fallenai%2Fquac&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [POPE](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2FAoiDragon%2FPOPE&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [MMStar](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2FStarCYLi%2FMMStar&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [SQuAD2.0](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Frajpurkar%2FSQuAD-explorer&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [ScienceQA](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Flupantech%2FScienceQA&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [RealWorldQA](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fsaltorchid%2FRealWorldQA&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [NumPy](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fnumpy%2Fnumpy&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [PyTorch](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fpytorch%2Fpytorch&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [Transformers](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fhuggingface%2Ftransformers&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [Accelerate](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fhuggingface%2Faccelerate&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+- [Dataset](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fhuggingface%2Fdatasets&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+
+## Citation
+If you find this work useful in your research, please star our repository and consider citing:
+
+@inproceedings{liu2026sinktrack,
+  title={SinkTrack: Attention Sink based Context Anchoring for Large Language Models},
+  author={Liu, Xu and Chen, Guikun and Wang, Wenguan},
+  booktitle={ICLR},
+  year={2026}
+}
+
+## Contributors
+- [67L1](https://github.com/67L1)
+- [Diana0120](https://github.com/Diana0120)
