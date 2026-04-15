@@ -218,14 +218,17 @@ This project builds upon several excellent open-source works. We sincerely thank
 - [ScienceQA](https://github.com/lupantech/ScienceQA)
 
 ## Citation
+
 If you find this work useful in your research, please star our repository and consider citing:
 
+```bibtex
 @inproceedings{liu2026sinktrack,
   title={SinkTrack: Attention Sink based Context Anchoring for Large Language Models},
   author={Liu, Xu and Chen, Guikun and Wang, Wenguan},
   booktitle={ICLR},
   year={2026}
 }
+```
 
 ## Contributors
 - [67L1](https://github.com/67L1)
