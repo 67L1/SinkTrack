@@ -197,24 +197,10 @@ python eval.py
 *Output:* This will display the evaluation metrics for all methods located in that directory.
 
 ## Acknowledgment
-Our implementation is mainly based on the following outstanding codebases and open-source projects. We sincerely thank the authors for their remarkable contributions to the community:
-- [Hugging Face Transformers](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fhuggingface%2Ftransformers&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [Qwen2.5 / Qwen2.5-VL](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2FQwenLM%2FQwen2.5&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [Llama 3.1](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama-models&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [Gemma3](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fgoogle-deepmind%2Fgemma&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [MiniCPM3](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [M3CoT](sslocal://flow/file_open?url=https%3A%2F%2Fhuggingface.co%2Fdatasets%2FLightChen2333%2FM3CoT&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [QuAC](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fallenai%2Fquac&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [POPE](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2FAoiDragon%2FPOPE&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [MMStar](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2FStarCYLi%2FMMStar&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [SQuAD2.0](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Frajpurkar%2FSQuAD-explorer&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [ScienceQA](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Flupantech%2FScienceQA&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [RealWorldQA](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fsaltorchid%2FRealWorldQA&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [NumPy](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fnumpy%2Fnumpy&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [PyTorch](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fpytorch%2Fpytorch&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [Transformers](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fhuggingface%2Ftransformers&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [Accelerate](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fhuggingface%2Faccelerate&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-- [Dataset](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fhuggingface%2Fdatasets&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
+Our implementation is mainly based on the following codebases. We gratefully thank the authors for their wonderful works.
+- Hugging Face Transformers
+- Qwen2.5-VL, Llama 3.1, Gemma3 official implementations
+- M3CoT, QuAC, POPE, MMStar, SQuAD2.0, ScienceQA
 
 ## Citation
 If you find this work useful in your research, please star our repository and consider citing:
