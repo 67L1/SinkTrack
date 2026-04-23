@@ -28,8 +28,6 @@ if not all_dataframes:
 
 df_merged = pd.concat(all_dataframes, ignore_index=True)
 
-print(df_merged.head())
-
 with open(output_json_path, 'w', encoding='utf-8') as json_file:
     for index, row in tqdm(df_merged.iterrows(), total=len(df_merged), desc="processing..."):
         unique_id = index

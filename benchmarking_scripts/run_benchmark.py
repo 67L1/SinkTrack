@@ -41,12 +41,10 @@ DATA_NAME = 'mmstar'
 INJECTION_LAYER = 5
 
 model_path = '/home/resource/model/Qwen2.5-VL-7B-Instruct'
-# default: Load the model on the available device(s)
 model = Qwen2_5_VLForConditionalGenerationWithInjection.from_pretrained(
     model_path, torch_dtype="auto", device_map="auto"
 )
 
-# default processer
 processor = AutoProcessor.from_pretrained(model_path)
 dataset = open(EVAL_FILE).readlines()
 dataset = [json.loads(d) for d in dataset]
@@ -65,7 +63,6 @@ def get_res(prompt, image, ):
         }
     ]
 
-    # Preparation for inference
     text = processor.apply_chat_template(
         messages, tokenize=False, add_generation_prompt=True
     )
@@ -79,7 +76,6 @@ def get_res(prompt, image, ):
     )
     inputs = inputs.to("cuda")
 
-    # Inference: Generation of the output
     generated_ids = model.generate(**inputs, max_new_tokens=2048, do_sample=True, injection_layer_idx=INJECTION_LAYER)
     generated_ids_trimmed = [
         out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
@@ -120,7 +116,6 @@ def main():
 
     for idx, data in enumerate(tqdm(dataset)):
         try:
-            print("="*200)
             mcot_input_str = zero_shot_prompt_template.format(data['question'])
             zero_shot_vision = [data['image']]
             zero_shot_mcot_input_str = mcot_input_str + '\n' + cot_prompt + '\n' + output_format_options
@@ -130,14 +125,13 @@ def main():
             zeroshot_mcot_output = copy.deepcopy(data)
             zeroshot_mcot_output['pred'] = zero_shot
             mcot_zero_fh.write(json.dumps(zeroshot_mcot_output) + '\n')
-            print(f"zeroshot_mcot_output:\n{zeroshot_mcot_output}\n")
 
             del zero_shot, zero_shot_vision
 
             torch.cuda.empty_cache()
             gc.collect()
         except Exception as e:
-            print(f"eeee:{e}")
+            pass
 
 
 

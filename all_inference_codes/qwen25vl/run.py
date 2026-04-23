@@ -61,10 +61,8 @@ parser.add_argument('--config', default='config.yaml', help='global environment 
 args = parser.parse_args()
 yaml = YAML()
 
-# Reading a YAML file
 with open(args.config, 'r') as file:
     config = yaml.load(file)
-    print(config)
 
 
 INJECTION_ALPHA = 0.8
@@ -111,7 +109,6 @@ def get_res(prompt, image, one_shot):
             }
         ]
 
-    # Preparation for inference
     text = processor.apply_chat_template(
         messages, tokenize=False, add_generation_prompt=True
     )
@@ -125,7 +122,6 @@ def get_res(prompt, image, one_shot):
     )
     inputs = inputs.to("cuda")
 
-    # Inference: Generation of the output
     generated_ids = model.generate(**inputs, max_new_tokens=2048, do_sample=True, injection_layer_idx=INJECTION_LAYER)
     generated_ids_trimmed = [
         out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
@@ -173,7 +169,6 @@ def main():
     point_name = 1321
     for idx, data in enumerate(tqdm(dataset)):
         try:
-            print("="*200)
             final_output_format = ""
             mcot_input_str = zero_shot_prompt_template.format(data['question'])
             if DATA_NAME == 'm3cot':
@@ -194,7 +189,6 @@ def main():
             zeroshot_mcot_output['pred'] = zero_shot
 
             mcot_zero_fh.write(json.dumps(zeroshot_mcot_output) + '\n')
-            print(f"zeroshot_mcot_output:\n{zeroshot_mcot_output}\n")
 
             del  zero_shot, zero_shot_vision
 
@@ -202,7 +196,7 @@ def main():
             torch.cuda.empty_cache()
             gc.collect()
         except Exception as e:
-            print(f"eeee:{e}")
+            pass
 
 
 

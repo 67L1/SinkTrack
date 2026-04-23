@@ -52,7 +52,6 @@ class Qwen2_5_VLInjectionAttention(Qwen2_5_VLAttention):
         )
 
         if is_injection_step:
-            print(f"injecting in {self.layer_idx} layer...")
             if output_attentions:
                 logger.warning_once(
                     "`output_attentions=True` is not supported in injection mode. Returning None for attentions.")
@@ -180,7 +179,6 @@ class Qwen2_5_VLInjectionDecoderLayer(Qwen2_5_VLDecoderLayer):
         )
         hidden_states = residual + hidden_states
 
-        # Fully Connected
         residual = hidden_states
         hidden_states = self.post_attention_layernorm(hidden_states)
         hidden_states = self.mlp(hidden_states)
@@ -236,7 +234,6 @@ class Qwen2_5_VLTextModelWithInjection(Qwen2_5_VLTextModel):
                 )
                 use_cache = False
 
-        # torch.jit.trace() doesn't support cache objects in the output
         if use_cache and past_key_values is None and not torch.jit.is_tracing():
             past_key_values = DynamicCache()
 
@@ -249,7 +246,6 @@ class Qwen2_5_VLTextModelWithInjection(Qwen2_5_VLTextModel):
                 past_seen_tokens, past_seen_tokens + inputs_embeds.shape[1], device=inputs_embeds.device
             )
 
-        # the hard coded `3` is for temporal, height and width.
         if position_ids is None:
             position_ids = cache_position.view(1, 1, -1).expand(3, inputs_embeds.shape[0], -1)
         elif position_ids.ndim == 2:
@@ -263,7 +259,6 @@ class Qwen2_5_VLTextModelWithInjection(Qwen2_5_VLTextModel):
             text_position_ids = position_ids[0]
 
         if not isinstance(causal_mask_mapping := attention_mask, dict):
-            # Prepare mask arguments
             mask_kwargs = {
                 "config": self.config,
                 "input_embeds": inputs_embeds,
@@ -272,11 +267,9 @@ class Qwen2_5_VLTextModelWithInjection(Qwen2_5_VLTextModel):
                 "past_key_values": past_key_values,
                 "position_ids": text_position_ids,
             }
-            # Create the masks
             causal_mask_mapping = {
                 "full_attention": create_causal_mask(**mask_kwargs),
             }
-            # The sliding window alternating layers are not always activated depending on the config
             if self.has_sliding_layers:
                 causal_mask_mapping["sliding_attention"] = create_sliding_window_causal_mask(**mask_kwargs)
 
@@ -389,15 +382,12 @@ class Qwen2_5_VLModelWithInjection(Qwen2_5_VLModel):
 
 
             if injection_layer_idx is not None:
-                print(f"Preparing global image embedding for injection.")
                 image_mask = (input_ids == self.config.image_token_id)
                 start_indices = torch.argmax(image_mask.int(), dim=1)
                 flipped_mask = torch.flip(image_mask, dims=[1])
                 end_indices_rev = torch.argmax(flipped_mask.int(), dim=1)
                 sequence_length = input_ids.shape[1]
                 end_indices = sequence_length - 1 - end_indices_rev
-                print("Start Indices:", start_indices)
-                print("End Indices:", end_indices)
                 global_image_embeddings_list = []
                 single_image_embeds = image_embeds
                 global_image_embeddings_list.append(single_image_embeds)
@@ -429,10 +419,6 @@ class Qwen2_5_VLModelWithInjection(Qwen2_5_VLModel):
             inputs_embeds = inputs_embeds.masked_scatter(video_mask, video_embeds)
 
         if position_ids is None:
-            # Calculate RoPE index once per generation in the pre-fill stage only.
-            # When compiling, we can't check tensor values thus we check only input length
-            # It is safe to assume that `length!=1` means we're in pre-fill because compiled
-            # models currently cannot do asssisted decoding
             prefill_compiled_stage = is_torchdynamo_compiling() and (
                     (input_ids is not None and input_ids.shape[1] != 1)
                     or (inputs_embeds is not None and inputs_embeds.shape[1] != 1)
@@ -543,7 +529,6 @@ class Qwen2_5_VLForConditionalGenerationWithInjection(Qwen2_5_VLForConditionalGe
 
         hidden_states = outputs[0]
 
-        # Only compute necessary logits, and do not upcast them to float if we are not computing the loss
         slice_indices = slice(-logits_to_keep, None) if isinstance(logits_to_keep, int) else logits_to_keep
         logits = self.lm_head(hidden_states[:, slice_indices, :])
 

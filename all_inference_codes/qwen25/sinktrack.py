@@ -53,7 +53,6 @@ class Qwen2InjectionAttention(Qwen2Attention):
         )
 
         if is_injection_step:
-            print(f"Injecting global prompt embedding at layer {self.layer_idx}...")
             query_states = self.q_proj(hidden_states)
             key_states_text = self.k_proj(hidden_states)
             value_states_text = self.v_proj(hidden_states)

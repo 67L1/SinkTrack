@@ -23,10 +23,8 @@ parser.add_argument('--seed', type=int, default=323, help='Random seed for repro
 args = parser.parse_args()
 yaml = YAML()
 
-# Reading a YAML file
 with open(args.config, 'r') as file:
     config = yaml.load(file)
-    print(config)
 
 ########### THE CODE YOU CAN MODIFY  ################
 path = 'models/gemma-3-4b-it' # model's path
@@ -102,7 +100,6 @@ def get_res(prompt, image, one_shot):
         generation = generation[0][input_len:]
 
     decoded = processor.decode(generation, skip_special_tokens=True)
-    print(decoded)
     return decoded
 
 
@@ -160,7 +157,6 @@ def main(SEED):
 
     for idx, data in enumerate(tqdm(dataset)):
         try:
-            print("="*200)
             mcot_input_str = zero_shot_prompt_template.format(data['question'])
             if DATA_NAME == 'm3cot':
                 for i, c in zip(['A', 'B', 'C', 'D', 'E', 'F'], data['choices']):
@@ -184,14 +180,13 @@ def main(SEED):
             zeroshot_mcot_output['pred'] = zero_shot
 
             mcot_zero_fh.write(json.dumps(zeroshot_mcot_output) + '\n')
-            print(f"zeroshot_mcot_output:\n{zeroshot_mcot_output}\n")
 
             del zero_shot, zero_shot_vision
 
             torch.cuda.empty_cache()
             gc.collect()
         except Exception as e:
-            print(f"eeee:{e}")
+            pass
 
 
 

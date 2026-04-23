@@ -45,13 +45,12 @@ import re
 
 try:
     from flash_attn import flash_attn_func, flash_attn_varlen_func
-    from flash_attn.bert_padding import index_first_axis, pad_input, unpad_input  # noqa
+    from flash_attn.bert_padding import index_first_axis, pad_input, unpad_input  
 except:
     pass
 
 
-# This makes `_prepare_4d_causal_attention_mask` a leaf function in the FX graph.
-# It means that the function will not be traced through and simply appear as a node in the graph.
+
 if is_torch_fx_available():
     if not is_torch_greater_or_equal_than_1_13:
         import torch.fx
@@ -103,7 +102,6 @@ class MiniCPMInjectionAttention(MiniCPMAttention):
         )
 
         if is_injection_step:
-            print(f"Injecting global prompt embedding at layer {self.layer_idx}...")
             q = self.q_b_proj(self.q_a_layernorm(self.q_a_proj(hidden_states)))
             q = q.view(bsz, q_len, self.num_heads, self.q_head_dim).transpose(1, 2)
             q_nope, q_pe = torch.split(q, [self.qk_nope_head_dim, self.qk_rope_head_dim], dim=-1)
@@ -240,7 +238,6 @@ class MiniCPMInjectionDecoderLayer(MiniCPMDecoderLayer):
 
         hidden_states = residual + hidden_states * (self.scale_depth / math.sqrt(self.num_hidden_layers))
 
-        # Fully Connected
         residual = hidden_states
         hidden_states = self.post_attention_layernorm(hidden_states)
         hidden_states = self.mlp(hidden_states)
@@ -328,11 +325,8 @@ class MiniCPM3ModelWithPromptInjection(MiniCPM3Model):
         self._use_sdpa = False
 
         if self._use_flash_attention_2:
-            # 2d mask is passed through the layers
             attention_mask = attention_mask if (attention_mask is not None and 0 in attention_mask) else None
         elif self._use_sdpa and not output_attentions:
-            # output_attentions=True can not be supported when using SDPA, and we fall back on
-            # the manual implementation that requires a 4D causal mask in all cases.
             attention_mask = _prepare_4d_causal_attention_mask_for_sdpa(
                 attention_mask,
                 (batch_size, seq_length),
@@ -340,7 +334,6 @@ class MiniCPM3ModelWithPromptInjection(MiniCPM3Model):
                 past_key_values_length,
             )
         else:
-            # 4d mask is passed through the layers
             attention_mask = _prepare_4d_causal_attention_mask(
                 attention_mask, (batch_size, seq_length), inputs_embeds, past_key_values_length
             )
@@ -383,7 +376,6 @@ class MiniCPM3ModelWithPromptInjection(MiniCPM3Model):
 
         hidden_states = self.norm(hidden_states)
 
-        # add hidden states from the last decoder layer
         if output_hidden_states:
             all_hidden_states += (hidden_states,)
 
@@ -440,7 +432,6 @@ class MiniCPM3ForCausalLMWithPromptInjection(MiniCPM3ForCausalLM):
         )
         return_dict = return_dict if return_dict is not None else self.config.use_return_dict
 
-        # decoder outputs consists of (dec_features, layer_state, dec_hidden, dec_attn)
         outputs = self.model(
             input_ids=input_ids,
             attention_mask=attention_mask,
@@ -451,7 +442,6 @@ class MiniCPM3ForCausalLMWithPromptInjection(MiniCPM3ForCausalLM):
             output_attentions=output_attentions,
             output_hidden_states=output_hidden_states,
             return_dict=return_dict,
-            # global_prompt_embedding=global_prompt_embedding,
             injection_layer_idx=injection_layer_idx,
         )
 
@@ -466,14 +456,11 @@ class MiniCPM3ForCausalLMWithPromptInjection(MiniCPM3ForCausalLM):
 
         loss = None
         if labels is not None:
-            # Shift so that tokens < n predict n
             shift_logits = logits[..., :-1, :].contiguous()
             shift_labels = labels[..., 1:].contiguous()
-            # Flatten the tokens
             loss_fct = CrossEntropyLoss()
             shift_logits = shift_logits.view(-1, self.config.vocab_size)
             shift_labels = shift_labels.view(-1)
-            # Enable model parallelism
             shift_labels = shift_labels.to(shift_logits.device)
             loss = loss_fct(shift_logits, shift_labels)
 
